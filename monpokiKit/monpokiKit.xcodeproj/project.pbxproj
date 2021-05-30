@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16D5956250CB33C7AFAEB00B /* Pods_monpokiKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B73CD9EB783720915DF972 /* Pods_monpokiKitUITests.framework */; };
+		2E6758F60E61F853453B7C80 /* Pods_monpokiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */; };
+		3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A96F2663C0CB00EEBCED /* AppDelegate.swift */; };
+		3363A9722663C0CB00EEBCED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9712663C0CB00EEBCED /* SceneDelegate.swift */; };
+		3363A9772663C0CB00EEBCED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3363A9752663C0CB00EEBCED /* Main.storyboard */; };
+		3363A9792663C0CB00EEBCED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3363A9782663C0CB00EEBCED /* Assets.xcassets */; };
+		3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3363A97A2663C0CB00EEBCED /* LaunchScreen.storyboard */; };
+		3363A9872663C0CB00EEBCED /* monpokiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9862663C0CB00EEBCED /* monpokiKitTests.swift */; };
+		3363A9922663C0CB00EEBCED /* monpokiKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9912663C0CB00EEBCED /* monpokiKitUITests.swift */; };
+		3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9DB2663C11600EEBCED /* KitViewController.swift */; };
+		3363A9DE2663C11600EEBCED /* KitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3363A9DC2663C11600EEBCED /* KitView.xib */; };
+		3363A9E02663C3FA00EEBCED /* KitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9DF2663C3FA00EEBCED /* KitView.swift */; };
+		3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9E12663C45D00EEBCED /* KitModel.swift */; };
+		3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9E62663C50000EEBCED /* PokimonStatusTableViewCell.swift */; };
+		3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3363A9E72663C50000EEBCED /* PokimonStatusTableViewCell.xib */; };
+		361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3363A9832663C0CB00EEBCED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3363A9642663C0CA00EEBCED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3363A96B2663C0CB00EEBCED;
+			remoteInfo = monpokiKit;
+		};
+		3363A98E2663C0CB00EEBCED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3363A9642663C0CA00EEBCED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3363A96B2663C0CB00EEBCED;
+			remoteInfo = monpokiKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		293E533B0E84C041E5587576 /* Pods-monpokiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.release.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.release.xcconfig"; sourceTree = "<group>"; };
+		3363A96C2663C0CB00EEBCED /* monpokiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monpokiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3363A96F2663C0CB00EEBCED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3363A9712663C0CB00EEBCED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3363A9762663C0CB00EEBCED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3363A9782663C0CB00EEBCED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3363A97B2663C0CB00EEBCED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3363A97D2663C0CB00EEBCED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3363A9822663C0CB00EEBCED /* monpokiKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = monpokiKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3363A9862663C0CB00EEBCED /* monpokiKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monpokiKitTests.swift; sourceTree = "<group>"; };
+		3363A9882663C0CB00EEBCED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3363A98D2663C0CB00EEBCED /* monpokiKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = monpokiKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3363A9912663C0CB00EEBCED /* monpokiKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monpokiKitUITests.swift; sourceTree = "<group>"; };
+		3363A9932663C0CB00EEBCED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3363A9DB2663C11600EEBCED /* KitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitViewController.swift; sourceTree = "<group>"; };
+		3363A9DC2663C11600EEBCED /* KitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KitView.xib; sourceTree = "<group>"; };
+		3363A9DF2663C3FA00EEBCED /* KitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitView.swift; sourceTree = "<group>"; };
+		3363A9E12663C45D00EEBCED /* KitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitModel.swift; sourceTree = "<group>"; };
+		3363A9E62663C50000EEBCED /* PokimonStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokimonStatusTableViewCell.swift; sourceTree = "<group>"; };
+		3363A9E72663C50000EEBCED /* PokimonStatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokimonStatusTableViewCell.xib; sourceTree = "<group>"; };
+		35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitTests.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKitTests/Pods-monpokiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.debug.xcconfig"; sourceTree = "<group>"; };
+		699198AC0BC7CD772F572223 /* Pods-monpokiKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitUITests.release.xcconfig"; path = "Target Support Files/Pods-monpokiKitUITests/Pods-monpokiKitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E3D84BDC05B7C5D5E27ADB0 /* Pods-monpokiKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitTests.release.xcconfig"; path = "Target Support Files/Pods-monpokiKitTests/Pods-monpokiKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		77B73CD9EB783720915DF972 /* Pods_monpokiKitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13674F1FF7EE4CC13528CB2 /* Pods-monpokiKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitUITests.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKitUITests/Pods-monpokiKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3363A9692663C0CB00EEBCED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3363A97F2663C0CB00EEBCED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E6758F60E61F853453B7C80 /* Pods_monpokiKitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3363A98A2663C0CB00EEBCED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D5956250CB33C7AFAEB00B /* Pods_monpokiKitUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EFA5BEEAE1C50F6A0046520 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */,
+				1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */,
+				77B73CD9EB783720915DF972 /* Pods_monpokiKitUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3363A9632663C0CA00EEBCED = {
+			isa = PBXGroup;
+			children = (
+				3363A96E2663C0CB00EEBCED /* monpokiKit */,
+				3363A9852663C0CB00EEBCED /* monpokiKitTests */,
+				3363A9902663C0CB00EEBCED /* monpokiKitUITests */,
+				3363A96D2663C0CB00EEBCED /* Products */,
+				DDB32497ADC92DAB99075039 /* Pods */,
+				1EFA5BEEAE1C50F6A0046520 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3363A96D2663C0CB00EEBCED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3363A96C2663C0CB00EEBCED /* monpokiKit.app */,
+				3363A9822663C0CB00EEBCED /* monpokiKitTests.xctest */,
+				3363A98D2663C0CB00EEBCED /* monpokiKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3363A96E2663C0CB00EEBCED /* monpokiKit */ = {
+			isa = PBXGroup;
+			children = (
+				3363A96F2663C0CB00EEBCED /* AppDelegate.swift */,
+				3363A9712663C0CB00EEBCED /* SceneDelegate.swift */,
+				3363A9E42663C49100EEBCED /* Model */,
+				3363A9E52663C49900EEBCED /* Controller */,
+				3363A9E32663C48700EEBCED /* View */,
+				3363A9752663C0CB00EEBCED /* Main.storyboard */,
+				3363A9782663C0CB00EEBCED /* Assets.xcassets */,
+				3363A97A2663C0CB00EEBCED /* LaunchScreen.storyboard */,
+				3363A97D2663C0CB00EEBCED /* Info.plist */,
+			);
+			path = monpokiKit;
+			sourceTree = "<group>";
+		};
+		3363A9852663C0CB00EEBCED /* monpokiKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3363A9862663C0CB00EEBCED /* monpokiKitTests.swift */,
+				3363A9882663C0CB00EEBCED /* Info.plist */,
+			);
+			path = monpokiKitTests;
+			sourceTree = "<group>";
+		};
+		3363A9902663C0CB00EEBCED /* monpokiKitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3363A9912663C0CB00EEBCED /* monpokiKitUITests.swift */,
+				3363A9932663C0CB00EEBCED /* Info.plist */,
+			);
+			path = monpokiKitUITests;
+			sourceTree = "<group>";
+		};
+		3363A9E32663C48700EEBCED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3363A9DF2663C3FA00EEBCED /* KitView.swift */,
+				3363A9DC2663C11600EEBCED /* KitView.xib */,
+				3363A9E62663C50000EEBCED /* PokimonStatusTableViewCell.swift */,
+				3363A9E72663C50000EEBCED /* PokimonStatusTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3363A9E42663C49100EEBCED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3363A9E12663C45D00EEBCED /* KitModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3363A9E52663C49900EEBCED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3363A9DB2663C11600EEBCED /* KitViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DDB32497ADC92DAB99075039 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */,
+				293E533B0E84C041E5587576 /* Pods-monpokiKit.release.xcconfig */,
+				39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */,
+				6E3D84BDC05B7C5D5E27ADB0 /* Pods-monpokiKitTests.release.xcconfig */,
+				B13674F1FF7EE4CC13528CB2 /* Pods-monpokiKitUITests.debug.xcconfig */,
+				699198AC0BC7CD772F572223 /* Pods-monpokiKitUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3363A96B2663C0CB00EEBCED /* monpokiKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3363A9962663C0CB00EEBCED /* Build configuration list for PBXNativeTarget "monpokiKit" */;
+			buildPhases = (
+				275182820E55B4B901B5F0FA /* [CP] Check Pods Manifest.lock */,
+				3363A9682663C0CB00EEBCED /* Sources */,
+				3363A9692663C0CB00EEBCED /* Frameworks */,
+				3363A96A2663C0CB00EEBCED /* Resources */,
+				1E3AF9DEC685CB8F76B60CC5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = monpokiKit;
+			productName = monpokiKit;
+			productReference = 3363A96C2663C0CB00EEBCED /* monpokiKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3363A9812663C0CB00EEBCED /* monpokiKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3363A9992663C0CB00EEBCED /* Build configuration list for PBXNativeTarget "monpokiKitTests" */;
+			buildPhases = (
+				DC670B99F690BA20F0E45397 /* [CP] Check Pods Manifest.lock */,
+				3363A97E2663C0CB00EEBCED /* Sources */,
+				3363A97F2663C0CB00EEBCED /* Frameworks */,
+				3363A9802663C0CB00EEBCED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3363A9842663C0CB00EEBCED /* PBXTargetDependency */,
+			);
+			name = monpokiKitTests;
+			productName = monpokiKitTests;
+			productReference = 3363A9822663C0CB00EEBCED /* monpokiKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3363A98C2663C0CB00EEBCED /* monpokiKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3363A99C2663C0CB00EEBCED /* Build configuration list for PBXNativeTarget "monpokiKitUITests" */;
+			buildPhases = (
+				E16776270F51B3D90711CFD3 /* [CP] Check Pods Manifest.lock */,
+				3363A9892663C0CB00EEBCED /* Sources */,
+				3363A98A2663C0CB00EEBCED /* Frameworks */,
+				3363A98B2663C0CB00EEBCED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3363A98F2663C0CB00EEBCED /* PBXTargetDependency */,
+			);
+			name = monpokiKitUITests;
+			productName = monpokiKitUITests;
+			productReference = 3363A98D2663C0CB00EEBCED /* monpokiKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3363A9642663C0CA00EEBCED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					3363A96B2663C0CB00EEBCED = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					3363A9812663C0CB00EEBCED = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 3363A96B2663C0CB00EEBCED;
+					};
+					3363A98C2663C0CB00EEBCED = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 3363A96B2663C0CB00EEBCED;
+					};
+				};
+			};
+			buildConfigurationList = 3363A9672663C0CA00EEBCED /* Build configuration list for PBXProject "monpokiKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3363A9632663C0CA00EEBCED;
+			productRefGroup = 3363A96D2663C0CB00EEBCED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3363A96B2663C0CB00EEBCED /* monpokiKit */,
+				3363A9812663C0CB00EEBCED /* monpokiKitTests */,
+				3363A98C2663C0CB00EEBCED /* monpokiKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3363A96A2663C0CB00EEBCED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */,
+				3363A9DE2663C11600EEBCED /* KitView.xib in Resources */,
+				3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */,
+				3363A9792663C0CB00EEBCED /* Assets.xcassets in Resources */,
+				3363A9772663C0CB00EEBCED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3363A9802663C0CB00EEBCED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3363A98B2663C0CB00EEBCED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E3AF9DEC685CB8F76B60CC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-monpokiKit/Pods-monpokiKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-monpokiKit/Pods-monpokiKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-monpokiKit/Pods-monpokiKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		275182820E55B4B901B5F0FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-monpokiKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC670B99F690BA20F0E45397 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-monpokiKitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E16776270F51B3D90711CFD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-monpokiKitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3363A9682663C0CB00EEBCED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */,
+				3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */,
+				3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */,
+				3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */,
+				3363A9722663C0CB00EEBCED /* SceneDelegate.swift in Sources */,
+				3363A9E02663C3FA00EEBCED /* KitView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3363A97E2663C0CB00EEBCED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3363A9872663C0CB00EEBCED /* monpokiKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3363A9892663C0CB00EEBCED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3363A9922663C0CB00EEBCED /* monpokiKitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3363A9842663C0CB00EEBCED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3363A96B2663C0CB00EEBCED /* monpokiKit */;
+			targetProxy = 3363A9832663C0CB00EEBCED /* PBXContainerItemProxy */;
+		};
+		3363A98F2663C0CB00EEBCED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3363A96B2663C0CB00EEBCED /* monpokiKit */;
+			targetProxy = 3363A98E2663C0CB00EEBCED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3363A9752663C0CB00EEBCED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3363A9762663C0CB00EEBCED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3363A97A2663C0CB00EEBCED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3363A97B2663C0CB00EEBCED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3363A9942663C0CB00EEBCED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3363A9952663C0CB00EEBCED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3363A9972663C0CB00EEBCED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKA8HKZB56;
+				INFOPLIST_FILE = monpokiKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tanukidevelop.monpokiKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3363A9982663C0CB00EEBCED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 293E533B0E84C041E5587576 /* Pods-monpokiKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKA8HKZB56;
+				INFOPLIST_FILE = monpokiKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tanukidevelop.monpokiKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3363A99A2663C0CB00EEBCED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKA8HKZB56;
+				INFOPLIST_FILE = monpokiKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tanukidevelop.monpokiKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/monpokiKit.app/monpokiKit";
+			};
+			name = Debug;
+		};
+		3363A99B2663C0CB00EEBCED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E3D84BDC05B7C5D5E27ADB0 /* Pods-monpokiKitTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKA8HKZB56;
+				INFOPLIST_FILE = monpokiKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tanukidevelop.monpokiKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/monpokiKit.app/monpokiKit";
+			};
+			name = Release;
+		};
+		3363A99D2663C0CB00EEBCED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B13674F1FF7EE4CC13528CB2 /* Pods-monpokiKitUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKA8HKZB56;
+				INFOPLIST_FILE = monpokiKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tanukidevelop.monpokiKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = monpokiKit;
+			};
+			name = Debug;
+		};
+		3363A99E2663C0CB00EEBCED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 699198AC0BC7CD772F572223 /* Pods-monpokiKitUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HKA8HKZB56;
+				INFOPLIST_FILE = monpokiKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tanukidevelop.monpokiKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = monpokiKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3363A9672663C0CA00EEBCED /* Build configuration list for PBXProject "monpokiKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3363A9942663C0CB00EEBCED /* Debug */,
+				3363A9952663C0CB00EEBCED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3363A9962663C0CB00EEBCED /* Build configuration list for PBXNativeTarget "monpokiKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3363A9972663C0CB00EEBCED /* Debug */,
+				3363A9982663C0CB00EEBCED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3363A9992663C0CB00EEBCED /* Build configuration list for PBXNativeTarget "monpokiKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3363A99A2663C0CB00EEBCED /* Debug */,
+				3363A99B2663C0CB00EEBCED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3363A99C2663C0CB00EEBCED /* Build configuration list for PBXNativeTarget "monpokiKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3363A99D2663C0CB00EEBCED /* Debug */,
+				3363A99E2663C0CB00EEBCED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3363A9642663C0CA00EEBCED /* Project object */;
+}

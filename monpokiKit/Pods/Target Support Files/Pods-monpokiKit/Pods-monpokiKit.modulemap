@@ -1,0 +1,6 @@
+framework module Pods_monpokiKit {
+  umbrella header "Pods-monpokiKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+use_frameworks!
+
+target 'monpokiKit' do
+  pod 'RxSwift' 
+  pod 'RxCocoa' 
+end
+
+target 'monpokiKitTests' do
+
+end
+
+target 'monpokiKitUITests' do
+
+end
