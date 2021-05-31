@@ -37,6 +37,24 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         kitView?.playerOneTableView.dataSource = self
         
         kitView?.playerOneTableView.register(UINib(nibName: "PokimonStatusTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+            longPressGesture.minimumPressDuration = 0.5
+             longPressGesture.allowableMovement = 10
+        kitView?.playerOneTableView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc func handleLongPress(longPressGesture: UILongPressGestureRecognizer) {
+        guard longPressGesture.state == .began else {
+            return
+        }
+        
+        let point = longPressGesture.location(in: kitView?.playerOneTableView)
+        guard let indexPath = kitView?.playerOneTableView.indexPathForRow(at: point) else {
+            return
+        }
+        print("CellLongTapped, index=\(indexPath.row)")
+        kitView?.playerOneTableView.deselectRow(at: indexPath, animated: true)
     }
     
     func showActionSheet(cell: PokimonStatusTableViewCell,isBattle: Bool) {
