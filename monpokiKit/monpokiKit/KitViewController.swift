@@ -140,7 +140,16 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             changePokimon(index: 5)
         }))
         
+        actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .destructive, handler: { (action:UIAlertAction) in
+            var selectStatus = self.kitModel.statusList[(indexPath.section + indexPath.row)]
+            self.kitModel.resetStatus(statsuModel: selectStatus)
+            self.kitView?.playerOneTableView.reloadData()
+        }))
+        
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
+            self.kitModel.statusList.remove(at: (indexPath.section + indexPath.row))
+            let newStatusModel = pokimonStatusModel()
+            self.kitModel.statusList.insert(newStatusModel, at: (indexPath.section + indexPath.row))
         }))
         // iPad の場合のみ、ActionSheetを表示するための必要な設定
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -200,7 +209,11 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         actionSheet.addAction(UIAlertAction(title: "ベンチ5へ移動", style: .default, handler: { (action:UIAlertAction) in
             changePokimon(index: 5)
         }))
-        
+        actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .destructive, handler: { (action:UIAlertAction) in
+            var selectStatus = self.kitModel.status2pList[(indexPath.section + indexPath.row)]
+            self.kitModel.resetStatus(statsuModel: selectStatus)
+            self.kitView?.playerTwoTableView.reloadData()
+        }))
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
         }))
         // iPad の場合のみ、ActionSheetを表示するための必要な設定
@@ -244,7 +257,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 }))
             }
 
-            actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
+            actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .destructive, handler: { (action:UIAlertAction) in
                 var selectedStatus: pokimonStatusModel
                 if (tableView == self!.kitView?.playerOneTableView) {
                     selectedStatus = self!.kitModel.statusList[(indexPath.section + indexPath.row)]
