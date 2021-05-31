@@ -28,6 +28,7 @@
 		338E686826650810001A2B16 /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686726650810001A2B16 /* reload.png */; };
 		338E686A26650860001A2B16 /* cointoss.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686926650860001A2B16 /* cointoss.png */; };
 		338E686C2665090D001A2B16 /* janken.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686B2665090D001A2B16 /* janken.png */; };
+		338E687226651D8A001A2B16 /* coins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 338E687126651D8A001A2B16 /* coins.jpg */; };
 		361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		338E686726650810001A2B16 /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		338E686926650860001A2B16 /* cointoss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cointoss.png; sourceTree = "<group>"; };
 		338E686B2665090D001A2B16 /* janken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = janken.png; sourceTree = "<group>"; };
+		338E687126651D8A001A2B16 /* coins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coins.jpg; sourceTree = "<group>"; };
 		35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitTests.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKitTests/Pods-monpokiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		338E685E266461C6001A2B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				338E687126651D8A001A2B16 /* coins.jpg */,
 				338E686726650810001A2B16 /* reload.png */,
 				338E686B2665090D001A2B16 /* janken.png */,
 				338E686926650860001A2B16 /* cointoss.png */,
@@ -340,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				338E687226651D8A001A2B16 /* coins.jpg in Resources */,
 				3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */,
 				338E686A26650860001A2B16 /* cointoss.png in Resources */,
 				338E686826650810001A2B16 /* reload.png in Resources */,
