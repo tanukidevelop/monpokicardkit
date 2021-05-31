@@ -26,6 +26,37 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.kitView = kitView
         loadTableView()
         
+        kitView.reloadButton.rx.tap.subscribe({ [weak self] _ in
+            self?.kitModel.resetGame()
+            self?.kitView?.gx1pSwitch.setOn(false, animated: false)
+            self?.kitView?.gx2pSwitch.setOn(false, animated: false)
+            self?.kitView?.playerOneTableView.reloadData()
+        }).disposed(by: disposeBag)
+        
+        kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
+            let content = UNMutableNotificationContent()
+            content.title = "お知らせ"
+            var cointossMsgList: [String] = ["コイントス：「表」がでました。", "コイントス：「裏」がでました。"]
+            content.body = cointossMsgList.randomElement()!
+            content.sound = UNNotificationSound.default
+            
+            // 直ぐに通知を表示
+            let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }).disposed(by: disposeBag)
+        
+        kitView.jankenButton.rx.tap.subscribe({ [weak self] _ in
+            let content = UNMutableNotificationContent()
+            content.title = "お知らせ"
+            var jankenMsgList: [String] = ["1Pがじゃんけんに勝ちました。", "2Pがじゃんけんに勝ちました。"]
+            content.body = jankenMsgList.randomElement()!
+            content.sound = UNNotificationSound.default
+            
+            // 直ぐに通知を表示
+            let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }).disposed(by: disposeBag)
+        
     }
     
     func loadTableView() {

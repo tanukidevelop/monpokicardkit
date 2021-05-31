@@ -11,6 +11,13 @@ class KitView: UIView {
 
     @IBOutlet weak var playerOneTableView: UITableView!
     
+    @IBOutlet weak var reloadButton: UIButton!
+    @IBOutlet weak var cointossButton: UIButton!
+    @IBOutlet weak var jankenButton: UIButton!
+    @IBOutlet weak var gx1pSwitch: UISwitch!
+    @IBOutlet weak var gx2pSwitch: UISwitch!
+    
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         loadNib()

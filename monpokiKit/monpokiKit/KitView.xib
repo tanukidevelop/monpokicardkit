@@ -11,7 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KitView" customModule="monpokiKit" customModuleProvider="target">
             <connections>
+                <outlet property="cointossButton" destination="ovd-fk-Rgw" id="u93-o8-NFK"/>
+                <outlet property="gx1pSwitch" destination="e0d-0C-us1" id="Nmt-dh-PNh"/>
+                <outlet property="gx2pSwitch" destination="fU1-BL-zEw" id="1gS-K5-wh2"/>
+                <outlet property="jankenButton" destination="p2C-dn-a88" id="L5N-2W-8YJ"/>
                 <outlet property="playerOneTableView" destination="ccw-su-x6W" id="udS-8V-eVI"/>
+                <outlet property="reloadButton" destination="sGR-Bp-vN3" id="d9m-sX-lon"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -106,7 +111,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="GX技" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-0C-us1">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="GX技" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-0C-us1">
                                             <rect key="frame" x="54" y="35.5" width="51" height="31"/>
                                         </switch>
                                     </subviews>
@@ -128,7 +133,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="GX技" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-BL-zEw">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="GX技" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-BL-zEw">
                                             <rect key="frame" x="54" y="35.5" width="51" height="31"/>
                                         </switch>
                                     </subviews>

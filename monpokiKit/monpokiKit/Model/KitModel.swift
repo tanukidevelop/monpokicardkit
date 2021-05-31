@@ -31,6 +31,14 @@ class KitModel {
         pokimonStatusModel(),
         pokimonStatusModel()]
     
+    var status2pList = [
+        pokimonStatusModel(),
+        pokimonStatusModel(),
+        pokimonStatusModel(),
+        pokimonStatusModel(),
+        pokimonStatusModel(),
+        pokimonStatusModel()]
+    
     init() {
     }
     
@@ -86,6 +94,24 @@ class KitModel {
         var selectedStatus = self.statusList[(indexPath.section + indexPath.row)]
         selectedStatus.damage -= 10
 
+    }
+    
+    func resetGame() {
+        statusList = [
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel()]
+        
+        status2pList = [
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel()]
     }
    
 }
