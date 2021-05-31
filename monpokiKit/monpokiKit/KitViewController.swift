@@ -55,6 +55,35 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         print("CellLongTapped, index=\(indexPath.row)")
         kitView?.playerOneTableView.deselectRow(at: indexPath, animated: true)
+        
+        // 移動用の処理を行う
+        let showPopoverCell: PokimonStatusTableViewCell = kitView?.playerOneTableView.cellForRow(at: indexPath) as! PokimonStatusTableViewCell
+        let actionSheet = UIAlertController(title: "移動処理",
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "バトル場へ移動", style: .default, handler: { (action:UIAlertAction) in
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ1へ移動", style: .default, handler: { (action:UIAlertAction) in
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ2へ移動", style: .default, handler: { (action:UIAlertAction) in
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ3へ移動", style: .default, handler: { (action:UIAlertAction) in
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ4へ移動", style: .default, handler: { (action:UIAlertAction) in
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ5へ移動", style: .default, handler: { (action:UIAlertAction) in
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
+        }))
+        // iPad の場合のみ、ActionSheetを表示するための必要な設定
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            actionSheet.popoverPresentationController?.sourceView = showPopoverCell
+            let screenSize = UIScreen.main.bounds
+            actionSheet.popoverPresentationController?.sourceRect = showPopoverCell.frame
+        }
+     
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     func showActionSheet(cell: PokimonStatusTableViewCell,isBattle: Bool) {
