@@ -16,7 +16,9 @@ class PokimonStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var master: UIStackView!
     @IBOutlet weak var poisonLabel: UILabel!
     @IBOutlet weak var fireLabel: UILabel!
+    @IBOutlet weak var recoveryImageView: UIImageView!
     @IBOutlet weak var recoveryButton: UIButton!
+    @IBOutlet weak var poisonImageView: UIImageView!
     @IBOutlet weak var settingsButton: UIButton!
     
     override func awakeFromNib() {
@@ -27,6 +29,12 @@ class PokimonStatusTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+        
+        // 回復ボタンを中央揃いに
+        recoveryButton.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
+        recoveryButton.titleLabel!.numberOfLines = 2
+        recoveryButton.titleLabel!.textAlignment = NSTextAlignment.center
+
     }
 
     @IBAction func tapRecoveryButton(_ sender: Any) {
@@ -38,7 +46,9 @@ class PokimonStatusTableViewCell: UITableViewCell {
             poisonLabel.isHidden = true
             fireLabel.isHidden = true
             recoveryButton.isHidden = true
+            recoveryImageView.isHidden = true
             settingsButton.isHidden = true
+            poisonImageView.isHidden = true
         }
     }
     

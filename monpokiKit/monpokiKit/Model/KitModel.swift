@@ -24,16 +24,17 @@ class KitModel {
         cell.fireLabel.isHidden = true
         cell.recoveryButton.isHidden = true
         cell.settingsButton.isHidden = true
-        
-
-
+        cell.recoveryImageView.isHidden = true
+        cell.poisonImageView.isHidden = true
     }
     
     func addDamage(cell: PokimonStatusTableViewCell) {
         cell.status!.damage += 10
         cell.damageLabel.isHidden = false
         cell.recoveryButton.isHidden = false
+        cell.recoveryImageView.isHidden = false
         cell.settingsButton.isHidden = false
+        cell.poisonImageView.isHidden = false
         cell.damageLabel.text = String(cell.status!.damage)
     }
     
@@ -42,7 +43,10 @@ class KitModel {
         if (cell.status!.damage == 0) {
             cell.damageLabel.isHidden = true
             cell.poisonLabel.isHidden = true
+            cell.recoveryImageView.isHidden = true
             cell.fireLabel.isHidden = true
+            cell.poisonImageView.isHidden = true
+
         }
     }
    

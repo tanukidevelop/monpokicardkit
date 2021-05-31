@@ -39,34 +39,37 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         kitView?.playerOneTableView.register(UINib(nibName: "PokimonStatusTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
     }
     
-    func showActionSheet(cell: PokimonStatusTableViewCell) {
+    func showActionSheet(cell: PokimonStatusTableViewCell,isBattle: Bool) {
         cell.settingsButton.rx.tap.subscribe({ [weak self] _ in
             // ボタンタップでキックしたいアクションを記述
             let actionSheet = UIAlertController(title: "設定",
                                                 message: nil,
                                                 preferredStyle: .actionSheet)
          
-            let showPoisonString = (cell.status?.poison == true) ? "「どく」解除" : "「どく」状態にする"
-            let showFireString = (cell.status?.fire == true) ? "「やけど」解除" : "「やけど」状態にする"
+            if (isBattle) {
+                let showPoisonString = (cell.status?.poison == true) ? "「どく」解除" : "「どく」状態にする"
+                let showFireString = (cell.status?.fire == true) ? "「やけど」解除" : "「やけど」状態にする"
 
-            actionSheet.addAction(UIAlertAction(title: showPoisonString, style: .default, handler: { (action:UIAlertAction) in
-                if (cell.status?.poison == true) {
-                    cell.poisonLabel.isHidden = true
-                    cell.status?.poison = false
-                } else {
-                    cell.poisonLabel.isHidden = false
-                    cell.status?.poison = true
-                }
-            }))
-            actionSheet.addAction(UIAlertAction(title: showFireString, style: .default, handler: { (action:UIAlertAction) in
-                if (cell.status?.fire == true) {
-                    cell.fireLabel.isHidden = true
-                    cell.status?.fire = false
-                } else {
-                    cell.fireLabel.isHidden = false
-                    cell.status?.fire = true
-                }
-            }))
+                actionSheet.addAction(UIAlertAction(title: showPoisonString, style: .default, handler: { (action:UIAlertAction) in
+                    if (cell.status?.poison == true) {
+                        cell.poisonLabel.isHidden = true
+                        cell.status?.poison = false
+                    } else {
+                        cell.poisonLabel.isHidden = false
+                        cell.status?.poison = true
+                    }
+                }))
+                actionSheet.addAction(UIAlertAction(title: showFireString, style: .default, handler: { (action:UIAlertAction) in
+                    if (cell.status?.fire == true) {
+                        cell.fireLabel.isHidden = true
+                        cell.status?.fire = false
+                    } else {
+                        cell.fireLabel.isHidden = false
+                        cell.status?.fire = true
+                    }
+                }))
+            }
+
             actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
                 self?.kitModel.resetCell(cell: cell)
             }))
@@ -119,7 +122,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? PokimonStatusTableViewCell {
             kitModel.resetCell(cell: cell)
-            showActionSheet(cell: cell)
+            showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0))
             return cell
 
         }
