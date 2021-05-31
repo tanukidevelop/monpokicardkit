@@ -42,8 +42,18 @@ class KitModel {
     init() {
     }
     
-    func loadCell(cell: PokimonStatusTableViewCell, indexPath: IndexPath ) {
-        var cellStatus = self.statusList[(indexPath.section + indexPath.row)]
+    func loadCell(cell: PokimonStatusTableViewCell, indexPath: IndexPath, isOnePlayer: Bool) {
+        var cellStatus: pokimonStatusModel
+        if (isOnePlayer) {
+            cellStatus = self.statusList[(indexPath.section + indexPath.row)]
+        } else {
+            cellStatus = self.status2pList[(indexPath.section + indexPath.row)]
+        }
+        
+        if (indexPath.section == 1) {
+            cellStatus.poison = false
+            cellStatus.fire = false
+        }
         
         if (cellStatus.damage > 0) {
             cell.damageLabel?.text = String(cellStatus.damage)
@@ -74,15 +84,10 @@ class KitModel {
         }
     }
     
-    func resetCell(cell: PokimonStatusTableViewCell){
-        cell.status = pokimonStatusModel()
-        cell.damageLabel.isHidden = true
-        cell.poisonLabel.isHidden = true
-        cell.fireLabel.isHidden = true
-        cell.recoveryButton.isHidden = true
-        cell.settingsButton.isHidden = true
-        cell.recoveryImageView.isHidden = true
-        cell.poisonImageView.isHidden = true
+    func resetStatus(statsuModel: pokimonStatusModel){
+        statsuModel.damage = 0
+        statsuModel.poison = false
+        statsuModel.fire = false
     }
     
     func addDamage(indexPath: IndexPath) {

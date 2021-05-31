@@ -16,6 +16,7 @@
                 <outlet property="gx2pSwitch" destination="fU1-BL-zEw" id="1gS-K5-wh2"/>
                 <outlet property="jankenButton" destination="p2C-dn-a88" id="L5N-2W-8YJ"/>
                 <outlet property="playerOneTableView" destination="ccw-su-x6W" id="udS-8V-eVI"/>
+                <outlet property="playerTwoTableView" destination="siF-en-qPD" id="mui-7r-HOy"/>
                 <outlet property="reloadButton" destination="sGR-Bp-vN3" id="d9m-sX-lon"/>
             </connections>
         </placeholder>

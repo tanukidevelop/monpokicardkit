@@ -48,7 +48,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         kitView.jankenButton.rx.tap.subscribe({ [weak self] _ in
             let content = UNMutableNotificationContent()
             content.title = "お知らせ"
-            var jankenMsgList: [String] = ["1Pがじゃんけんに勝ちました。", "2Pがじゃんけんに勝ちました。"]
+            var jankenMsgList: [String] = ["プレイヤー1がじゃんけんに勝ちました。", "プレイヤー2がじゃんけんに勝ちました。"]
             content.body = jankenMsgList.randomElement()!
             content.sound = UNNotificationSound.default
             
@@ -74,6 +74,19 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         longPressGesture.allowableMovement = 10
         kitView?.playerOneTableView.addGestureRecognizer(longPressGesture)
         
+        
+        kitView?.playerTwoTableView.isScrollEnabled = false
+        UITableView.appearance().separatorInset = UIEdgeInsets.zero
+
+        kitView?.playerTwoTableView.delegate = self
+        kitView?.playerTwoTableView.dataSource = self
+        
+        kitView?.playerTwoTableView.register(UINib(nibName: "PokimonStatusTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        
+        let longTwoPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTwoPressGesture))
+        longTwoPressGesture.minimumPressDuration = 0.5
+        longTwoPressGesture.allowableMovement = 10
+        kitView?.playerTwoTableView.addGestureRecognizer(longTwoPressGesture)
 
     }
     
@@ -138,7 +151,68 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func showActionSheet(cell: PokimonStatusTableViewCell,isBattle: Bool) {
+    @objc func longTwoPressGesture(longPressGesture: UILongPressGestureRecognizer) {
+        guard longPressGesture.state == .began else {
+            return
+        }
+        
+        let point = longPressGesture.location(in: kitView?.playerTwoTableView)
+        guard let indexPath = kitView?.playerTwoTableView.indexPathForRow(at: point) else {
+            return
+        }
+        print("CellLongTapped, index=\(indexPath.row)")
+        kitView?.playerTwoTableView.deselectRow(at: indexPath, animated: true)
+        
+        // 移動用の処理を行う
+        
+        // 3:引数が1個の場合
+        func changePokimon (index: Int){
+            let beforeIndexPath = indexPath.section + indexPath.row
+            let beforeMovingStatus = self.kitModel.status2pList[beforeIndexPath] //0
+            let DestinationStatus = self.kitModel.status2pList[index]
+            self.kitModel.status2pList.remove(at: index)
+            self.kitModel.status2pList.insert(beforeMovingStatus.copy(), at: index)
+            self.kitModel.status2pList.remove(at: beforeIndexPath)
+            self.kitModel.status2pList.insert(DestinationStatus.copy(), at: beforeIndexPath)
+            self.kitView?.playerTwoTableView.reloadData()
+        }
+        
+        let showPopoverCell: PokimonStatusTableViewCell = kitView?.playerTwoTableView.cellForRow(at: indexPath) as! PokimonStatusTableViewCell
+        let actionSheet = UIAlertController(title: "移動処理",
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "バトル場へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 0)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ1へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 1)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ2へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 2)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ3へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 3)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ4へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 4)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "ベンチ5へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 5)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
+        }))
+        // iPad の場合のみ、ActionSheetを表示するための必要な設定
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            actionSheet.popoverPresentationController?.sourceView = showPopoverCell
+            let screenSize = UIScreen.main.bounds
+            actionSheet.popoverPresentationController?.sourceRect = showPopoverCell.frame
+        }
+     
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func showActionSheet(cell: PokimonStatusTableViewCell,isBattle: Bool, tableView: UITableView,indexPath:IndexPath) {
         cell.settingsButton.rx.tap.subscribe({ [weak self] _ in
             // ボタンタップでキックしたいアクションを記述
             let actionSheet = UIAlertController(title: "設定",
@@ -170,7 +244,16 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             }
 
             actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
-                self?.kitModel.resetCell(cell: cell)
+                var selectedStatus: pokimonStatusModel
+                if (tableView == self!.kitView?.playerOneTableView) {
+                    selectedStatus = self!.kitModel.statusList[(indexPath.section + indexPath.row)]
+                    self!.kitModel.resetStatus(statsuModel: selectedStatus)
+                } else {
+                    selectedStatus = self!.kitModel.status2pList[(indexPath.section + indexPath.row)]
+                    self!.kitModel.resetStatus(statsuModel: selectedStatus)
+                }
+                tableView.reloadData()
+                
             }))
             actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
             }))
@@ -220,17 +303,29 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? PokimonStatusTableViewCell {
-            cell.status = kitModel.statusList[(indexPath.section + indexPath.row)]
-            kitModel.loadCell(cell: cell, indexPath: indexPath)
-            showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0))
-            return cell
+            
+            if (tableView == kitView?.playerOneTableView) {
+                cell.status = kitModel.statusList[(indexPath.section + indexPath.row)]
+                kitModel.loadCell(cell: cell, indexPath: indexPath, isOnePlayer: true)
+                showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0),tableView: tableView,indexPath: indexPath)
 
+            } else {
+                cell.status = kitModel.status2pList[(indexPath.section + indexPath.row)]
+                kitModel.loadCell(cell: cell, indexPath: indexPath, isOnePlayer: false)
+                showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0),tableView: tableView,indexPath: indexPath)
+            }
+            return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedStatus = self.kitModel.statusList[(indexPath.section + indexPath.row)]
+        var selectedStatus: pokimonStatusModel
+        if (tableView == kitView?.playerOneTableView) {
+            selectedStatus = self.kitModel.statusList[(indexPath.section + indexPath.row)]
+        } else {
+            selectedStatus = self.kitModel.status2pList[(indexPath.section + indexPath.row)]
+        }
         selectedStatus.damage += 10
         tableView.reloadData()
     }
