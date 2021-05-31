@@ -174,12 +174,6 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.status = kitModel.statusList[(indexPath.section + indexPath.row)]
             kitModel.loadCell(cell: cell, indexPath: indexPath)
             showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0))
-            
-            cell.recoveryButton.rx.tap.subscribe({ [weak self] _ in
-                var selectedStatus = self!.kitModel.statusList[(indexPath.section + indexPath.row)]
-                selectedStatus.damage -= 10
-                tableView.reloadData()
-            }).disposed(by: disposeBag)
             return cell
 
         }

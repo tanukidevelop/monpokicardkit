@@ -83,6 +83,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku5-xy-izi">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <connections>
+                                                    <action selector="tappedRecoveryButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iVT-JR-F8p"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

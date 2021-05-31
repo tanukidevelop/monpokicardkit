@@ -29,12 +29,21 @@ class PokimonStatusTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-        
-        // 回復ボタンを中央揃いに
-        recoveryButton.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
-        recoveryButton.titleLabel!.numberOfLines = 2
-        recoveryButton.titleLabel!.textAlignment = NSTextAlignment.center
-
     }
 
+    @IBAction func tappedRecoveryButton(_ sender: Any) {
+        self.status?.damage -= 10
+        self.damageLabel.text = String(self.status!.damage)
+        
+        if (self.status?.damage == 0) {
+            self.damageLabel.isHidden = true
+            self.poisonLabel.isHidden = true
+            self.fireLabel.isHidden = true
+            self.recoveryButton.isHidden = true
+            self.settingsButton.isHidden = true
+            self.recoveryImageView.isHidden = true
+            self.poisonImageView.isHidden = true
+        }
+
+    }
 }

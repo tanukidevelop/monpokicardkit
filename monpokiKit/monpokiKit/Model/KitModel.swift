@@ -73,26 +73,15 @@ class KitModel {
         cell.poisonImageView.isHidden = true
     }
     
-    func addDamage(cell: PokimonStatusTableViewCell) {
-        cell.status!.damage += 10
-        cell.damageLabel.isHidden = false
-        cell.recoveryButton.isHidden = false
-        cell.recoveryImageView.isHidden = false
-        cell.settingsButton.isHidden = false
-        cell.poisonImageView.isHidden = false
-        cell.damageLabel.text = String(cell.status!.damage)
+    func addDamage(indexPath: IndexPath) {
+        var selectedStatus = self.statusList[(indexPath.section + indexPath.row)]
+        selectedStatus.damage += 10
     }
     
-    func subDamage(cell: PokimonStatusTableViewCell) {
-        cell.status!.damage -= 10
-        if (cell.status!.damage == 0) {
-            cell.damageLabel.isHidden = true
-            cell.poisonLabel.isHidden = true
-            cell.recoveryImageView.isHidden = true
-            cell.fireLabel.isHidden = true
-            cell.poisonImageView.isHidden = true
+    @objc func subDamage(indexPath: IndexPath)  {
+        var selectedStatus = self.statusList[(indexPath.section + indexPath.row)]
+        selectedStatus.damage -= 10
 
-        }
     }
    
 }

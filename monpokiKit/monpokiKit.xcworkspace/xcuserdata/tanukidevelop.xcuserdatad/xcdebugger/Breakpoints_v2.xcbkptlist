@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3A1ABB07-1D8B-4CC6-A201-FE52A0BFA6F0"
+            uuid = "2CF36009-5995-4FEA-91C6-96A8CB4882F9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "monpokiKit/KitViewController.swift"
+            filePath = "monpokiKit/PokimonStatusTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "tappedRecoveryButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
