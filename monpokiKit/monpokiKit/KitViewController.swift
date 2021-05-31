@@ -59,22 +59,40 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         kitView?.playerOneTableView.deselectRow(at: indexPath, animated: true)
         
         // 移動用の処理を行う
+        
+        // 3:引数が1個の場合
+        func changePokimon (index: Int){
+            let beforeIndexPath = indexPath.section + indexPath.row
+            let beforeMovingStatus = self.kitModel.statusList[beforeIndexPath] //0
+            let DestinationStatus = self.kitModel.statusList[index]
+            self.kitModel.statusList.remove(at: index)
+            self.kitModel.statusList.insert(beforeMovingStatus.copy(), at: index)
+            self.kitModel.statusList.remove(at: beforeIndexPath)
+            self.kitModel.statusList.insert(DestinationStatus.copy(), at: beforeIndexPath)
+            self.kitView?.playerOneTableView.reloadData()
+        }
+        
         let showPopoverCell: PokimonStatusTableViewCell = kitView?.playerOneTableView.cellForRow(at: indexPath) as! PokimonStatusTableViewCell
         let actionSheet = UIAlertController(title: "移動処理",
                                             message: nil,
                                             preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "バトル場へ移動", style: .default, handler: { (action:UIAlertAction) in
-            let beforeMovingStatus = showPopoverCell.status
+            changePokimon(index: 0)
         }))
         actionSheet.addAction(UIAlertAction(title: "ベンチ1へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 1)
         }))
         actionSheet.addAction(UIAlertAction(title: "ベンチ2へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 2)
         }))
         actionSheet.addAction(UIAlertAction(title: "ベンチ3へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 3)
         }))
         actionSheet.addAction(UIAlertAction(title: "ベンチ4へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 4)
         }))
         actionSheet.addAction(UIAlertAction(title: "ベンチ5へ移動", style: .default, handler: { (action:UIAlertAction) in
+            changePokimon(index: 5)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in

@@ -11,6 +11,14 @@ class pokimonStatusModel {
     var damage: Int = 0
     var poison: Bool = false
     var fire: Bool = false
+    
+    func copy() -> pokimonStatusModel {
+        let copyStatusModel = pokimonStatusModel()
+        copyStatusModel.damage = self.damage
+        copyStatusModel.poison = self.poison
+        copyStatusModel.fire = self.fire
+        return copyStatusModel
+    }
 }
 
 class KitModel {
@@ -33,12 +41,8 @@ class KitModel {
             cell.damageLabel?.text = String(cellStatus.damage)
 
             cell.damageLabel.isHidden = false
-            if (cell.status?.poison == true) {
-                cell.poisonLabel.isHidden = false
-            }
-            if (cell.status?.fire == true) {
-                cell.fireLabel.isHidden = false
-            }
+            cell.poisonLabel.isHidden = !(cell.status?.poison == true)
+            cell.fireLabel.isHidden = !((cell.status?.fire == true))
             
             if (indexPath.section == 1) {
                 // ベンチは異常状態にならない
