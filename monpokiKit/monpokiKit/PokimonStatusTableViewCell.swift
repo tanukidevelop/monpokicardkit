@@ -37,19 +37,4 @@ class PokimonStatusTableViewCell: UITableViewCell {
 
     }
 
-    @IBAction func tapRecoveryButton(_ sender: Any) {
-        self.status?.damage -= 10
-        self.damageLabel.text = String(self.status!.damage)
-
-        if (self.status?.damage == 0) {
-            damageLabel.isHidden = true
-            poisonLabel.isHidden = true
-            fireLabel.isHidden = true
-            recoveryButton.isHidden = true
-            recoveryImageView.isHidden = true
-            settingsButton.isHidden = true
-            poisonImageView.isHidden = true
-        }
-    }
-    
 }

@@ -39,9 +39,11 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         kitView?.playerOneTableView.register(UINib(nibName: "PokimonStatusTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-            longPressGesture.minimumPressDuration = 0.5
-             longPressGesture.allowableMovement = 10
+        longPressGesture.minimumPressDuration = 0.5
+        longPressGesture.allowableMovement = 10
         kitView?.playerOneTableView.addGestureRecognizer(longPressGesture)
+        
+
     }
     
     @objc func handleLongPress(longPressGesture: UILongPressGestureRecognizer) {
@@ -62,6 +64,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                                             message: nil,
                                             preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "バトル場へ移動", style: .default, handler: { (action:UIAlertAction) in
+            let beforeMovingStatus = showPopoverCell.status
         }))
         actionSheet.addAction(UIAlertAction(title: "ベンチ1へ移動", style: .default, handler: { (action:UIAlertAction) in
         }))
@@ -168,8 +171,15 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? PokimonStatusTableViewCell {
-            kitModel.resetCell(cell: cell)
+            cell.status = kitModel.statusList[(indexPath.section + indexPath.row)]
+            kitModel.loadCell(cell: cell, indexPath: indexPath)
             showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0))
+            
+            cell.recoveryButton.rx.tap.subscribe({ [weak self] _ in
+                var selectedStatus = self!.kitModel.statusList[(indexPath.section + indexPath.row)]
+                selectedStatus.damage -= 10
+                tableView.reloadData()
+            }).disposed(by: disposeBag)
             return cell
 
         }
@@ -177,9 +187,9 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? PokimonStatusTableViewCell else { return }
-        kitModel.addDamage(cell: cell)
-        tableView.deselectRow(at: indexPath, animated: true)
+        var selectedStatus = self.kitModel.statusList[(indexPath.section + indexPath.row)]
+        selectedStatus.damage += 10
+        tableView.reloadData()
     }
     
 }
