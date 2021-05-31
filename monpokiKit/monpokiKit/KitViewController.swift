@@ -31,6 +31,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             self?.kitView?.gx1pSwitch.setOn(false, animated: false)
             self?.kitView?.gx2pSwitch.setOn(false, animated: false)
             self?.kitView?.playerOneTableView.reloadData()
+            self?.kitView?.playerTwoTableView.reloadData()
         }).disposed(by: disposeBag)
         
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
