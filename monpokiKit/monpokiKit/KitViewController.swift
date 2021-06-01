@@ -37,7 +37,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
             let content = UNMutableNotificationContent()
             content.title = "お知らせ"
-            var cointossMsgList: [String] = ["コイントス：「表」がでました。", "コイントス：「裏」がでました。"]
+            var cointossMsgList: [String] = ["コイントス：「おもて」がでました。", "コイントス：「うら」がでました。"]
             content.body = cointossMsgList.randomElement()!
             content.sound = UNNotificationSound.default
             
