@@ -8,11 +8,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import GoogleMobileAds
 
 
 class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    
+    private var interstitial: GADInterstitialAd?
 
     var kitView : KitView?
     var kitModel = KitModel()
@@ -21,6 +21,7 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showAdMob()
         // StoryboardでのTweetViewControllerの親ViewがTweetListViewなので取得できる。
         guard let kitView = view as? KitView else { return }
         self.kitView = kitView
@@ -59,6 +60,20 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }).disposed(by: disposeBag)
         
     }
+    
+    func showAdMob() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/3345264085",
+                               request: request,
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                interstitial = ad
+                               }
+        )}
+
     
     func loadTableView() {
         
