@@ -284,7 +284,13 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        if UIDevice.current.userInterfaceIdiom == .pad {
+           // 使用デバイスがiPadの場合
+            return 80
+        } else {
+           // 使用デバイスがiPhoneの場合
+            return 40
+        }
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {

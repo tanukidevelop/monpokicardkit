@@ -23,7 +23,14 @@ class PokimonStatusTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            // iPhoneの場合は「どく・やけど」ラベルのフォントを小さくする。
+            self.poisonLabel!.font = UIFont.boldSystemFont(ofSize: 15.0)
+            self.fireLabel!.font = UIFont.boldSystemFont(ofSize: 15.0)
+        }
+
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

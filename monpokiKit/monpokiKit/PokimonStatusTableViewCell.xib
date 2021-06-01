@@ -46,39 +46,41 @@
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-Pb-MW3">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="13"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="13" id="LB9-yZ-S2v"/>
+                                                    <constraint firstAttribute="height" constant="5" id="LB9-yZ-S2v"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どく" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yc-N6-ESQ">
-                                                <rect key="frame" x="0.0" y="13" width="70" height="24"/>
+                                                <rect key="frame" x="0.0" y="5" width="70" height="26.5"/>
                                                 <color key="backgroundColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2g-SE-Md3">
-                                                <rect key="frame" x="0.0" y="37" width="70" height="5"/>
+                                                <rect key="frame" x="0.0" y="31.5" width="70" height="5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="WTz-gq-hyP"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="やけど" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-ur-2zw">
-                                                <rect key="frame" x="0.0" y="42" width="70" height="24"/>
+                                                <rect key="frame" x="0.0" y="36.5" width="70" height="24.5"/>
                                                 <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNB-aD-9Yn">
-                                                <rect key="frame" x="0.0" y="66" width="70" height="14"/>
+                                                <rect key="frame" x="0.0" y="61" width="70" height="19"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="1yc-N6-ESQ" firstAttribute="height" secondItem="Zwi-ur-2zw" secondAttribute="height" multiplier="1.10417" id="63G-98-tFb"/>
+                                            <constraint firstItem="1yc-N6-ESQ" firstAttribute="height" secondItem="BAa-Md-j0f" secondAttribute="height" multiplier="1/3" id="Bbh-xk-eWI"/>
                                             <constraint firstAttribute="width" constant="70" id="z7T-Xh-mno"/>
                                         </constraints>
                                     </stackView>
