@@ -88,6 +88,11 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         longTwoPressGesture.minimumPressDuration = 0.5
         longTwoPressGesture.allowableMovement = 10
         kitView?.playerTwoTableView.addGestureRecognizer(longTwoPressGesture)
+        
+        let tableFooterView = UIView()
+        kitView?.playerOneTableView.tableFooterView = tableFooterView
+        kitView?.playerTwoTableView.tableFooterView = tableFooterView
+
 
     }
     
