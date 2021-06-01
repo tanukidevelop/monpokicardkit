@@ -43,6 +43,8 @@ class PokimonStatusTableViewCell: UITableViewCell {
         self.damageLabel.text = String(self.status!.damage)
         
         if (self.status?.damage == 0) {
+            self.status?.poison = false
+            self.status?.fire = false
             self.damageLabel.isHidden = true
             self.poisonLabel.isHidden = true
             self.fireLabel.isHidden = true

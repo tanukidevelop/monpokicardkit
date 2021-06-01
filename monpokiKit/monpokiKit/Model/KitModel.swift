@@ -90,17 +90,6 @@ class KitModel {
         statsuModel.fire = false
     }
     
-    func addDamage(indexPath: IndexPath) {
-        var selectedStatus = self.statusList[(indexPath.section + indexPath.row)]
-        selectedStatus.damage += 10
-    }
-    
-    @objc func subDamage(indexPath: IndexPath)  {
-        var selectedStatus = self.statusList[(indexPath.section + indexPath.row)]
-        selectedStatus.damage -= 10
-
-    }
-    
     func resetGame() {
         statusList = [
             pokimonStatusModel(),
