@@ -39,6 +39,8 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }).disposed(by: disposeBag)
         
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
+            self?.pleaseAllowNotification()
+            
             let content = UNMutableNotificationContent()
             content.title = "お知らせ"
             var cointossMsgList: [String] = ["コイントス：「おもて」がでました。", "コイントス：「うら」がでました。"]
@@ -53,6 +55,8 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }).disposed(by: disposeBag)
         
         kitView.jankenButton.rx.tap.subscribe({ [weak self] _ in
+            self?.pleaseAllowNotification()
+
             let content = UNMutableNotificationContent()
             content.title = "お知らせ"
             var jankenMsgList: [String] = ["プレイヤー1がじゃんけんに勝ちました。", "プレイヤー2がじゃんけんに勝ちました。"]
@@ -93,6 +97,28 @@ class KitViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                                                                    
                                             )}
         )
+    }
+    
+    func pleaseAllowNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: { (granted, error) in
+            if error != nil {
+                return
+            }
+            
+            if granted {
+                debugPrint("通知許可")
+            } else {
+                let alert = UIAlertController(title: "通知が許可されていません", message: "コイントス、じゃんけん機能はアプリ内のプッシュ通知を利用します。設定アプリ>通知から通知を全て許可してください。", preferredStyle: .alert)
+                let yesAction = UIAlertAction(title: "閉じる", style: .default, handler: { (UIAlertAction) in
+                })
+                alert.addAction(yesAction)
+                
+                DispatchQueue.main.async {
+                    // メインスレッドで実行 UIの処理など
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        })
     }
     
     func loadTableView() {
