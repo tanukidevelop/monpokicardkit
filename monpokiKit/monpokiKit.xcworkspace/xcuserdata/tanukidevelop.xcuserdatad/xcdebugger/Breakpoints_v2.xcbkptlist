@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AE4F3D32-6B6C-43A3-925F-3D3E7D253BCB"
+            uuid = "250CB105-C4CF-41D8-8603-3E6494E35CD1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "monpokiKit/KitViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "loadTableView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

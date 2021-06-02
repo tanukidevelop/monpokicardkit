@@ -8,24 +8,32 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import GoogleMobileAds
 
 
 class KitViewController: UIViewController {
+    private var interstitial: GADInterstitialAd?
+    
+    var addTimer = Timer()
     let disposeBag = DisposeBag()
+    
+    
     var kitView : KitView?
     var kitModel = KitModel()
     
     var playerOneTableView = TableViewController()
     var playerTwoTableView = TableViewController()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // StoryboardでのTweetViewControllerの親ViewがTweetListViewなので取得できる。
         guard let kitView = view as? KitView else { return }
         self.kitView = kitView
+        
+        loadTableView()
+
         
         kitView.reloadButton.rx.tap.subscribe({ [weak self] _ in
             self?.kitView?.gx1pSwitch.setOn(false, animated: false)
@@ -34,6 +42,7 @@ class KitViewController: UIViewController {
             self?.playerTwoTableView.tableViewModel.resetGame()
             self?.playerOneTableView.tableView.reloadData()
             self?.playerTwoTableView.tableView.reloadData()
+
         }).disposed(by: disposeBag)
         
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
@@ -48,6 +57,8 @@ class KitViewController: UIViewController {
             // 直ぐに通知を表示
             let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
+            self?.showAdMob()
         }).disposed(by: disposeBag)
         
         kitView.jankenButton.rx.tap.subscribe({ [weak self] _ in
@@ -62,21 +73,36 @@ class KitViewController: UIViewController {
             // 直ぐに通知を表示
             let request = UNNotificationRequest(identifier: "immediately", content: content, trigger: nil)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
+            self?.showAdMob()
         }).disposed(by: disposeBag)
-
-        playerOneTableView.tableViewModel.resetGame()
-        playerTwoTableView.tableViewModel.resetGame()
-        
-        self.kitView?.playerOneView.frame = playerOneTableView.view.frame
-        self.kitView?.playerTwoView.frame = playerTwoTableView.view.frame
-
-        self.kitView?.playerOneView?.addSubview(playerOneTableView.view!)
-        self.kitView?.playerTwoView?.addSubview(playerTwoTableView.view!)
-        
-        print(self.kitView?.playerOneView?.frame)
-        print(playerOneTableView.view.frame)
-
-
+        showAdMob()
+    }
+    
+    func showAdMob() {
+        addTimer.invalidate()
+        //timer処理
+        addTimer = Timer.scheduledTimer(withTimeInterval: 240.0, repeats: true, block: { (timer) in
+                                            let request = GADRequest()
+                                            
+                                            // adId:ca-app-pub-7248782092625183/3345264085
+                                            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/3345264085",
+                                                                   request: request,
+                                                                   completionHandler: { [self] ad, error in
+                                                                    if let error = error {
+                                                                        print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                                                        return
+                                                                    }
+                                                                    interstitial = ad
+                                                                    if self.interstitial != nil {
+                                                                        self.interstitial!.present(fromRootViewController: self)
+                                                                    } else {
+                                                                        print("Ad wasn't ready")
+                                                                    }
+                                                                   }
+                                                                   
+                                            )}
+        )
     }
     
     func pleaseAllowNotification() {
@@ -100,6 +126,14 @@ class KitViewController: UIViewController {
             }
         })
     }
-
     
+    func loadTableView() {
+        playerOneTableView.tableViewModel.resetGame()
+        playerTwoTableView.tableViewModel.resetGame()
+        
+        self.kitView?.playerOneView.frame = playerOneTableView.view.frame
+        self.kitView?.playerTwoView.frame = playerTwoTableView.view.frame
+        self.kitView?.playerOneView?.addSubview(playerOneTableView.view!)
+        self.kitView?.playerTwoView?.addSubview(playerTwoTableView.view!)
+    }
 }

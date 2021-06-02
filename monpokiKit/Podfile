@@ -6,6 +6,8 @@ use_frameworks!
 target 'monpokiKit' do
   pod 'RxSwift' 
   pod 'RxCocoa' 
+  pod 'Google-Mobile-Ads-SDK'
+
 end
 
 target 'monpokiKitTests' do
