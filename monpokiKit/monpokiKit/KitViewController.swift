@@ -42,7 +42,6 @@ class KitViewController: UIViewController {
             self?.playerTwoTableView.tableViewModel.resetGame()
             self?.playerOneTableView.tableView.reloadData()
             self?.playerTwoTableView.tableView.reloadData()
-
         }).disposed(by: disposeBag)
         
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
@@ -79,30 +78,34 @@ class KitViewController: UIViewController {
         showAdMob()
     }
     
+    func requestShowAdMob() {
+        let request = GADRequest()
+        
+        // adId:ca-app-pub-7248782092625183/3345264085
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/3345264085",
+                               request: request,
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                interstitial = ad
+                                if self.interstitial != nil {
+                                    self.interstitial!.present(fromRootViewController: self)
+                                } else {
+                                    print("Ad wasn't ready")
+                                }
+                               }
+                               
+        )
+    }
+    
     func showAdMob() {
         addTimer.invalidate()
         //timer処理
-        addTimer = Timer.scheduledTimer(withTimeInterval: 240.0, repeats: true, block: { (timer) in
-                                            let request = GADRequest()
-                                            
-                                            // adId:ca-app-pub-7248782092625183/3345264085
-                                            GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/3345264085",
-                                                                   request: request,
-                                                                   completionHandler: { [self] ad, error in
-                                                                    if let error = error {
-                                                                        print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                                                        return
-                                                                    }
-                                                                    interstitial = ad
-                                                                    if self.interstitial != nil {
-                                                                        self.interstitial!.present(fromRootViewController: self)
-                                                                    } else {
-                                                                        print("Ad wasn't ready")
-                                                                    }
-                                                                   }
-                                                                   
-                                            )}
-        )
+        addTimer = Timer.scheduledTimer(withTimeInterval: 180.0, repeats: true, block: { (timer) in
+            self.requestShowAdMob()
+        })
     }
     
     func pleaseAllowNotification() {
