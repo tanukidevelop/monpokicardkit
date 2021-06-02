@@ -16,8 +16,8 @@
                 <outlet property="gx1pSwitch" destination="e0d-0C-us1" id="Nmt-dh-PNh"/>
                 <outlet property="gx2pSwitch" destination="fU1-BL-zEw" id="1gS-K5-wh2"/>
                 <outlet property="jankenButton" destination="p2C-dn-a88" id="L5N-2W-8YJ"/>
-                <outlet property="playerOneTableView" destination="ccw-su-x6W" id="udS-8V-eVI"/>
-                <outlet property="playerTwoTableView" destination="siF-en-qPD" id="mui-7r-HOy"/>
+                <outlet property="playerOneView" destination="QHE-o4-LIQ" id="3E3-6p-MEj"/>
+                <outlet property="playerTwoView" destination="cmB-gK-Tpd" id="KCm-ym-Ent"/>
                 <outlet property="reloadButton" destination="sGR-Bp-vN3" id="d9m-sX-lon"/>
             </connections>
         </placeholder>
@@ -183,16 +183,25 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdM-m0-y8f" userLabel="PlayerOneView">
                                             <rect key="frame" x="1" y="0.0" width="399" height="325"/>
                                             <subviews>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-su-x6W">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHE-o4-LIQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="399" height="325"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCK-Yt-O00">
+                                                            <rect key="frame" x="165" y="152" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                </tableView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ccw-su-x6W" secondAttribute="bottom" id="3Cq-qw-1QA"/>
-                                                <constraint firstAttribute="trailing" secondItem="ccw-su-x6W" secondAttribute="trailing" id="IMJ-OE-TxA"/>
-                                                <constraint firstItem="ccw-su-x6W" firstAttribute="leading" secondItem="FdM-m0-y8f" secondAttribute="leading" id="Rpx-En-4x6"/>
-                                                <constraint firstItem="ccw-su-x6W" firstAttribute="top" secondItem="FdM-m0-y8f" secondAttribute="top" id="xQf-sS-kcV"/>
+                                                <constraint firstItem="QHE-o4-LIQ" firstAttribute="top" secondItem="FdM-m0-y8f" secondAttribute="top" id="1uK-h1-yw1"/>
+                                                <constraint firstAttribute="trailing" secondItem="QHE-o4-LIQ" secondAttribute="trailing" id="QGA-TA-5x9"/>
+                                                <constraint firstItem="QHE-o4-LIQ" firstAttribute="leading" secondItem="FdM-m0-y8f" secondAttribute="leading" id="pVI-LS-fH3"/>
+                                                <constraint firstAttribute="bottom" secondItem="QHE-o4-LIQ" secondAttribute="bottom" id="xzH-vN-dbB"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tU-4O-rw0" userLabel="Space">
@@ -205,16 +214,16 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-we-1qk" userLabel="PlayerTwoView">
                                             <rect key="frame" x="401" y="0.0" width="406" height="325"/>
                                             <subviews>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="siF-en-qPD">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmB-gK-Tpd">
                                                     <rect key="frame" x="0.0" y="0.0" width="406" height="325"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                </tableView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="siF-en-qPD" secondAttribute="trailing" id="0Do-mJ-zfJ"/>
-                                                <constraint firstItem="siF-en-qPD" firstAttribute="leading" secondItem="ffT-we-1qk" secondAttribute="leading" id="pUo-QL-5TB"/>
-                                                <constraint firstItem="siF-en-qPD" firstAttribute="top" secondItem="ffT-we-1qk" secondAttribute="top" id="uNV-EH-gFO"/>
-                                                <constraint firstAttribute="bottom" secondItem="siF-en-qPD" secondAttribute="bottom" id="wH9-Od-HtV"/>
+                                                <constraint firstAttribute="bottom" secondItem="cmB-gK-Tpd" secondAttribute="bottom" id="BB5-u8-M8i"/>
+                                                <constraint firstAttribute="trailing" secondItem="cmB-gK-Tpd" secondAttribute="trailing" id="a2N-hP-7li"/>
+                                                <constraint firstItem="cmB-gK-Tpd" firstAttribute="leading" secondItem="ffT-we-1qk" secondAttribute="leading" id="dLu-xP-6oB"/>
+                                                <constraint firstItem="cmB-gK-Tpd" firstAttribute="top" secondItem="ffT-we-1qk" secondAttribute="top" id="fdk-tv-1r6"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtO-4M-S5E" userLabel="Space">

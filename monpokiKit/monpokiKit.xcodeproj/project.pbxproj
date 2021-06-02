@@ -22,6 +22,9 @@
 		3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9E12663C45D00EEBCED /* KitModel.swift */; };
 		3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9E62663C50000EEBCED /* PokimonStatusTableViewCell.swift */; };
 		3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3363A9E72663C50000EEBCED /* PokimonStatusTableViewCell.xib */; };
+		33645BDE2667A8970079878B /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33645BDD2667A8970079878B /* TableViewModel.swift */; };
+		33645BE22667A8B00079878B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33645BE12667A8B00079878B /* TableViewController.swift */; };
+		33645BE62667B6F90079878B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33645BE52667B6F90079878B /* TableViewController.xib */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
 		338E686226646335001A2B16 /* heartCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686126646335001A2B16 /* heartCard.png */; };
@@ -71,6 +74,9 @@
 		3363A9E12663C45D00EEBCED /* KitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitModel.swift; sourceTree = "<group>"; };
 		3363A9E62663C50000EEBCED /* PokimonStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokimonStatusTableViewCell.swift; sourceTree = "<group>"; };
 		3363A9E72663C50000EEBCED /* PokimonStatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokimonStatusTableViewCell.xib; sourceTree = "<group>"; };
+		33645BDD2667A8970079878B /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		33645BE12667A8B00079878B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		33645BE52667B6F90079878B /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		338E686126646335001A2B16 /* heartCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCard.png; sourceTree = "<group>"; };
@@ -153,9 +159,8 @@
 			children = (
 				3363A96F2663C0CB00EEBCED /* AppDelegate.swift */,
 				3363A9712663C0CB00EEBCED /* SceneDelegate.swift */,
-				3363A9E42663C49100EEBCED /* Model */,
-				3363A9E52663C49900EEBCED /* Controller */,
-				3363A9E32663C48700EEBCED /* View */,
+				33645BD92667A8140079878B /* TableView */,
+				33645BD82667A8000079878B /* Tool */,
 				3363A9752663C0CB00EEBCED /* Main.storyboard */,
 				3363A9782663C0CB00EEBCED /* Assets.xcassets */,
 				3363A97A2663C0CB00EEBCED /* LaunchScreen.storyboard */,
@@ -191,6 +196,7 @@
 				3363A9E72663C50000EEBCED /* PokimonStatusTableViewCell.xib */,
 			);
 			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3363A9E42663C49100EEBCED /* Model */ = {
@@ -205,6 +211,51 @@
 			isa = PBXGroup;
 			children = (
 				3363A9DB2663C11600EEBCED /* KitViewController.swift */,
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		33645BD82667A8000079878B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3363A9E42663C49100EEBCED /* Model */,
+				3363A9E52663C49900EEBCED /* Controller */,
+				3363A9E32663C48700EEBCED /* View */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		33645BD92667A8140079878B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				33645BDA2667A8700079878B /* Model */,
+				33645BDB2667A8770079878B /* View */,
+				33645BDC2667A87C0079878B /* Controller */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		33645BDA2667A8700079878B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33645BDD2667A8970079878B /* TableViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33645BDB2667A8770079878B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		33645BDC2667A87C0079878B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33645BE12667A8B00079878B /* TableViewController.swift */,
+				33645BE52667B6F90079878B /* TableViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -355,6 +406,7 @@
 				338E686226646335001A2B16 /* heartCard.png in Resources */,
 				3363A9772663C0CB00EEBCED /* Main.storyboard in Resources */,
 				338E686C2665090D001A2B16 /* janken.png in Resources */,
+				33645BE62667B6F90079878B /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,10 +518,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */,
+				33645BDE2667A8970079878B /* TableViewModel.swift in Sources */,
 				3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */,
 				3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */,
 				3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */,
 				3363A9722663C0CB00EEBCED /* SceneDelegate.swift in Sources */,
+				33645BE22667A8B00079878B /* TableViewController.swift in Sources */,
 				3363A9E02663C3FA00EEBCED /* KitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
