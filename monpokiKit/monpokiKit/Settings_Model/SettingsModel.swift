@@ -7,7 +7,15 @@
 
 import UIKit
 
+enum SettingMenu: Int {
+    case ChangePlayMode = 1
+    case BuyAddBlock = 2
+    
+    case _count // ダミーカウンタ
+    static let count = _count.rawValue // 利用するものはこちら
+}
 
-class SettingsModel {
-   let cellList = ["広告非表示機能(¥370)を購入する"]
+
+class SettingsModel {    
+    let cellList = ["データ表示人数切り替え（1P ⇄ 1P + 2P）","AppStoreで広告非表示機能（¥370）を購入する"]
 }

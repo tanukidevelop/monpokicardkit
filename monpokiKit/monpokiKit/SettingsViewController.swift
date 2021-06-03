@@ -25,6 +25,8 @@ class SettingsViewController: UIViewController{
     }
     
     func loadTableView() {
+        self.tableView.tableFooterView = UIView()
+
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -36,17 +38,29 @@ extension SettingsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = SettingModel.cellList[indexPath.row]
+        switch indexPath.row {
+        case SettingMenu.ChangePlayMode.rawValue:
+            cell.textLabel?.text = "データ切り替え人数"
+            cell.imageView?.image = UIImage(named: "moneyIcon.png")
+        case SettingMenu.BuyAddBlock.rawValue:
+            cell.textLabel?.text = "AppStoreで広告非表示機能（¥370）を購入する"
+        default:
+            break
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SettingModel.cellList.count
+        return SettingMenu.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
 
 extension SettingsViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

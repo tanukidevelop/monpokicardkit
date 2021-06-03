@@ -29,6 +29,7 @@
 		33658B5D2668E8200014DD48 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33658B5B2668E8200014DD48 /* SettingsViewController.xib */; };
 		33658B5F2668E82B0014DD48 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B5E2668E82B0014DD48 /* SettingsModel.swift */; };
 		33658B612668EB980014DD48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B602668EB980014DD48 /* settings.png */; };
+		33658B692668F6A90014DD48 /* moneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B682668F6A90014DD48 /* moneyIcon.png */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
 		338E686226646335001A2B16 /* heartCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686126646335001A2B16 /* heartCard.png */; };
@@ -85,6 +86,7 @@
 		33658B5B2668E8200014DD48 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		33658B5E2668E82B0014DD48 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		33658B602668EB980014DD48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		33658B682668F6A90014DD48 /* moneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moneyIcon.png; path = ../../../../Downloads/moneyIcon.png; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		338E686126646335001A2B16 /* heartCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCard.png; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		338E685E266461C6001A2B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				33658B682668F6A90014DD48 /* moneyIcon.png */,
 				33658B602668EB980014DD48 /* settings.png */,
 				338E687126651D8A001A2B16 /* coins.jpg */,
 				338E686726650810001A2B16 /* reload.png */,
@@ -439,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				338E687226651D8A001A2B16 /* coins.jpg in Resources */,
+				33658B692668F6A90014DD48 /* moneyIcon.png in Resources */,
 				3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */,
 				338E686A26650860001A2B16 /* cointoss.png in Resources */,
 				338E686826650810001A2B16 /* reload.png in Resources */,
