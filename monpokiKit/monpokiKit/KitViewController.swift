@@ -34,6 +34,11 @@ class KitViewController: UIViewController {
         
         loadTableView()
 
+        kitView.settingsButton.rx.tap.subscribe({ [weak self] _ in
+            let settingsVC = SettingsViewController()
+            self?.navigationController?.pushViewController(settingsVC, animated: true)
+        }).disposed(by: disposeBag)
+        
         
         kitView.reloadButton.rx.tap.subscribe({ [weak self] _ in
             self?.kitView?.gx1pSwitch.setOn(false, animated: false)
@@ -76,6 +81,11 @@ class KitViewController: UIViewController {
             self?.showAdMob()
         }).disposed(by: disposeBag)
         showAdMob()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func requestShowAdMob() {

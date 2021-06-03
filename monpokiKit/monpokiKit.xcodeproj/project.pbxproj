@@ -28,6 +28,7 @@
 		33658B5C2668E8200014DD48 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B5A2668E8200014DD48 /* SettingsViewController.swift */; };
 		33658B5D2668E8200014DD48 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33658B5B2668E8200014DD48 /* SettingsViewController.xib */; };
 		33658B5F2668E82B0014DD48 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B5E2668E82B0014DD48 /* SettingsModel.swift */; };
+		33658B612668EB980014DD48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B602668EB980014DD48 /* settings.png */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
 		338E686226646335001A2B16 /* heartCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686126646335001A2B16 /* heartCard.png */; };
@@ -83,6 +84,7 @@
 		33658B5A2668E8200014DD48 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		33658B5B2668E8200014DD48 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		33658B5E2668E82B0014DD48 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		33658B602668EB980014DD48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		338E686126646335001A2B16 /* heartCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCard.png; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		338E685E266461C6001A2B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				33658B602668EB980014DD48 /* settings.png */,
 				338E687126651D8A001A2B16 /* coins.jpg */,
 				338E686726650810001A2B16 /* reload.png */,
 				338E686B2665090D001A2B16 /* janken.png */,
@@ -441,6 +444,7 @@
 				338E686826650810001A2B16 /* reload.png in Resources */,
 				338E685D266461C2001A2B16 /* dokuro.png in Resources */,
 				33658B5D2668E8200014DD48 /* SettingsViewController.xib in Resources */,
+				33658B612668EB980014DD48 /* settings.png in Resources */,
 				3363A9DE2663C11600EEBCED /* KitView.xib in Resources */,
 				3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */,
 				338E6860266462E9001A2B16 /* heart.png in Resources */,
