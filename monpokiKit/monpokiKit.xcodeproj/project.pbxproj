@@ -30,6 +30,9 @@
 		33658B5F2668E82B0014DD48 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B5E2668E82B0014DD48 /* SettingsModel.swift */; };
 		33658B612668EB980014DD48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B602668EB980014DD48 /* settings.png */; };
 		33658B692668F6A90014DD48 /* moneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B682668F6A90014DD48 /* moneyIcon.png */; };
+		33658B72266900E40014DD48 /* DownloadProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B70266900E40014DD48 /* DownloadProduct.swift */; };
+		33658B73266900E40014DD48 /* PurchaseProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B71266900E40014DD48 /* PurchaseProduct.swift */; };
+		33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B76266904E00014DD48 /* AppStoreClass.swift */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
 		338E686226646335001A2B16 /* heartCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686126646335001A2B16 /* heartCard.png */; };
@@ -87,6 +90,9 @@
 		33658B5E2668E82B0014DD48 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		33658B602668EB980014DD48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		33658B682668F6A90014DD48 /* moneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moneyIcon.png; path = ../../../../Downloads/moneyIcon.png; sourceTree = "<group>"; };
+		33658B70266900E40014DD48 /* DownloadProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProduct.swift; sourceTree = "<group>"; };
+		33658B71266900E40014DD48 /* PurchaseProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseProduct.swift; sourceTree = "<group>"; };
+		33658B76266904E00014DD48 /* AppStoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreClass.swift; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		338E686126646335001A2B16 /* heartCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCard.png; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 			children = (
 				3363A96F2663C0CB00EEBCED /* AppDelegate.swift */,
 				3363A9712663C0CB00EEBCED /* SceneDelegate.swift */,
+				33658B6F266900DB0014DD48 /* AppStore */,
 				33658B552668E7B60014DD48 /* Settings */,
 				33645BD92667A8140079878B /* TableView */,
 				33645BD82667A8000079878B /* Tool */,
@@ -303,6 +310,16 @@
 				33658B5B2668E8200014DD48 /* SettingsViewController.xib */,
 			);
 			name = Settings_Controller;
+			sourceTree = "<group>";
+		};
+		33658B6F266900DB0014DD48 /* AppStore */ = {
+			isa = PBXGroup;
+			children = (
+				33658B76266904E00014DD48 /* AppStoreClass.swift */,
+				33658B70266900E40014DD48 /* DownloadProduct.swift */,
+				33658B71266900E40014DD48 /* PurchaseProduct.swift */,
+			);
+			path = AppStore;
 			sourceTree = "<group>";
 		};
 		338E685E266461C6001A2B16 /* Resource */ = {
@@ -567,10 +584,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33658B73266900E40014DD48 /* PurchaseProduct.swift in Sources */,
 				3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */,
 				33645BDE2667A8970079878B /* TableViewModel.swift in Sources */,
 				3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */,
 				3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */,
+				33658B72266900E40014DD48 /* DownloadProduct.swift in Sources */,
+				33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */,
 				3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */,
 				3363A9722663C0CB00EEBCED /* SceneDelegate.swift in Sources */,
 				33658B5F2668E82B0014DD48 /* SettingsModel.swift in Sources */,

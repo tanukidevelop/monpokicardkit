@@ -8,8 +8,8 @@
 import UIKit
 
 enum SettingMenu: Int {
-    case ChangePlayMode = 1
-    case BuyAddBlock = 2
+    case ChangePlayMode = 0
+    case BuyAddBlock = 1
     
     case _count // ダミーカウンタ
     static let count = _count.rawValue // 利用するものはこちら

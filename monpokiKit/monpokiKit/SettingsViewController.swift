@@ -41,9 +41,9 @@ extension SettingsViewController: UITableViewDataSource {
         switch indexPath.row {
         case SettingMenu.ChangePlayMode.rawValue:
             cell.textLabel?.text = "データ切り替え人数"
-            cell.imageView?.image = UIImage(named: "moneyIcon.png")
         case SettingMenu.BuyAddBlock.rawValue:
             cell.textLabel?.text = "AppStoreで広告非表示機能（¥370）を購入する"
+            cell.imageView?.image = UIImage(named: "moneyIcon.png")
         default:
             break
         }
@@ -51,7 +51,10 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SettingMenu.count
+        if (AppStoreClass.shared.isPurchased()) {
+            return 1
+        }
+        return SettingMenu.count 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,5 +65,11 @@ extension SettingsViewController: UITableViewDataSource {
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case SettingMenu.BuyAddBlock.rawValue:
+            AppStoreClass.shared.buyAdBlockFromAppStore()
+        default:
+            break
+        }
     }
 }

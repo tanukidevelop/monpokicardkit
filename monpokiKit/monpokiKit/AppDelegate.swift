@@ -7,6 +7,8 @@
 
 import UIKit
 import GoogleMobileAds // 追加
+import StoreKit
+
 
 
 @main
@@ -31,7 +33,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        
+        // オブザーバー登録
+        SKPaymentQueue.default().add(PurchaseProduct.shared)
+        
+        // 購入済みかどうか確認して、購入していない場合はアイテムが購入可能なのか確認する。
+        if (!AppStoreClass.shared.isPurchased()) {
+            AppStoreClass.shared.AdBlockFromAppStoreExists()
+        }
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        // オブザーバー登録解除
+        SKPaymentQueue.default().remove(PurchaseProduct.shared)
     }
 
     // MARK: UISceneSession Lifecycle
