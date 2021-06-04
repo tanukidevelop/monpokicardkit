@@ -27,7 +27,6 @@ class KitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppStoreClass.shared.isPurchasedWhenAppStart()
 
         // StoryboardでのTweetViewControllerの親ViewがTweetListViewなので取得できる。
         guard let kitView = view as? KitView else { return }
@@ -140,14 +139,18 @@ class KitViewController: UIViewController {
     }
     
     func showAdMob() {
+        guard !(AppStoreClass.shared.isPurchased)  else {
+            // 課金済みの場合はタイマー処理に行かせないで終える
+            return
+        }
         // 広告課金済みなら広告を表示しない
-        if (AppStoreClass.shared.isPurchased) { return}
- 
         addTimer.invalidate()
         //timer処理
-        addTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true, block: { (timer) in
-            self.requestShowAdMob()
+        addTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true, block: { (timer) in
+            // クロージャの変数のキャプチャを考慮して広告表示自体の処理にもif文を設ける
+            if (!AppStoreClass.shared.isPurchased) { self.requestShowAdMob() }
         })
+        
     }
     
     func pleaseAllowNotification() {

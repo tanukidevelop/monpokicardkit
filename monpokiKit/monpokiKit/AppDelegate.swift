@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
+        AppStoreClass.shared.isPurchasedWhenAppStart()
+
         return true
     }
     
