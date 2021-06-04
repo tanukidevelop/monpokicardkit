@@ -40,6 +40,7 @@
 		338E687226651D8A001A2B16 /* coins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 338E687126651D8A001A2B16 /* coins.jpg */; };
 		3395A48F2669EE1800095CD2 /* Configuration copy.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3395A48E2669EE1800095CD2 /* Configuration copy.storekit */; };
 		3395A4912669EE5100095CD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3395A4902669EE5100095CD2 /* StoreKit.framework */; };
+		3395A495266A14CC00095CD2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395A494266A14CC00095CD2 /* Extension.swift */; };
 		361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		338E687126651D8A001A2B16 /* coins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coins.jpg; sourceTree = "<group>"; };
 		3395A48E2669EE1800095CD2 /* Configuration copy.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Configuration copy.storekit"; sourceTree = "<group>"; };
 		3395A4902669EE5100095CD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		3395A494266A14CC00095CD2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitTests.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKitTests/Pods-monpokiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				3363A9782663C0CB00EEBCED /* Assets.xcassets */,
 				3363A97A2663C0CB00EEBCED /* LaunchScreen.storyboard */,
 				3363A97D2663C0CB00EEBCED /* Info.plist */,
+				3395A494266A14CC00095CD2 /* Extension.swift */,
 			);
 			path = monpokiKit;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */,
 				33645BDE2667A8970079878B /* TableViewModel.swift in Sources */,
 				3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */,
+				3395A495266A14CC00095CD2 /* Extension.swift in Sources */,
 				3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */,
 				33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */,
 				3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */,

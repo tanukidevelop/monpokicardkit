@@ -9,7 +9,8 @@ import UIKit
 
 enum SettingMenu: Int {
     case ChangePlayMode = 0
-    case BuyAddBlock = 1
+    case RestoreAdBlock = 1
+    case BuyAdBlock = 2
     
     case _count // ダミーカウンタ
     static let count = _count.rawValue // 利用するものはこちら
@@ -17,5 +18,5 @@ enum SettingMenu: Int {
 
 
 class SettingsModel {    
-    let cellList = ["データ表示人数切り替え（1P ⇄ 1P + 2P）","AppStoreで広告非表示機能（¥370）を購入する"]
+    let cellList = ["データ表示人数切り替え（1P ⇄ 1P + 2P）","「広告非表示機能」を復元","AppStoreで「広告非表示機能」を購入"]
 }
