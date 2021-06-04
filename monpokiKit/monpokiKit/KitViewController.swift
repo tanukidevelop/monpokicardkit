@@ -113,9 +113,8 @@ class KitViewController: UIViewController {
     
     func showAdMob() {
         // 広告課金済みなら広告を表示しない
-        
-        guard !AppStoreClass.shared.isPurchased() else { return }
-
+        if (AppStoreClass.shared.isPurchased) { return}
+ 
         addTimer.invalidate()
         //timer処理
         addTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true, block: { (timer) in

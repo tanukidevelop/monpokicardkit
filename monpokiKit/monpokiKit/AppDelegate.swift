@@ -8,8 +8,7 @@
 import UIKit
 import GoogleMobileAds // 追加
 import StoreKit
-
-
+import SwiftyStoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,20 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        AppStoreClass.shared.isPurchasedWhenAppStart()
         
-        // オブザーバー登録
-        SKPaymentQueue.default().add(PurchaseProduct.shared)
-        
-        // 購入済みかどうか確認して、購入していない場合はアイテムが購入可能なのか確認する。
-        if (!AppStoreClass.shared.isPurchased()) {
-            AppStoreClass.shared.AdBlockFromAppStoreExists()
-        }
         return true
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        // オブザーバー登録解除
-        SKPaymentQueue.default().remove(PurchaseProduct.shared)
     }
 
     // MARK: UISceneSession Lifecycle
@@ -63,6 +54,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func initSwiftyStorekit() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
+    }
 
 }
 

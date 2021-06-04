@@ -51,7 +51,8 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (AppStoreClass.shared.isPurchased()) {
+        return 2
+        if (AppStoreClass.shared.isPurchased) {
             return 1
         }
         return SettingMenu.count 
@@ -66,6 +67,7 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
+        case SettingMenu.ChangePlayMode.rawValue:
         case SettingMenu.BuyAddBlock.rawValue:
             AppStoreClass.shared.buyAdBlockFromAppStore()
         default:
