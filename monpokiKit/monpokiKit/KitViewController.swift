@@ -27,7 +27,8 @@ class KitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        AppStoreClass.shared.isPurchasedWhenAppStart()
+
         // StoryboardでのTweetViewControllerの親ViewがTweetListViewなので取得できる。
         guard let kitView = view as? KitView else { return }
         self.kitView = kitView
@@ -39,11 +40,21 @@ class KitViewController: UIViewController {
                                                 message: nil,
                                                 preferredStyle: .actionSheet)
             actionSheet.addAction(UIAlertAction(title: "広告非表示機能を復元", style: .default, handler: { (action:UIAlertAction) in
-                
+                AppStoreClass.shared.restore { isSuccess in
+                    if (isSuccess) {
+                        self?.showAlertControllerAutoDelete(massage: "復元に成功しました。")
+                    } else {
+                        self?.showAlertControllerAutoDelete(massage: "復元に失敗しました。広告非表示機能が購入されていません。")
+                    }
+                }
             }))
-            actionSheet.addAction(UIAlertAction(title: "広告非表示機能を購入", style: .default, handler: { (action:UIAlertAction) in
+            
+            if (!AppStoreClass.shared.isPurchased) {
+                actionSheet.addAction(UIAlertAction(title: "広告非表示機能を購入", style: .default, handler: { (action:UIAlertAction) in
+                    AppStoreClass.shared.purchaseItemFromAppStore(productId: "adBlock")
+                }))
+            }
 
-            }))
             
             // iPad の場合のみ、ActionSheetを表示するための必要な設定
             if UIDevice.current.userInterfaceIdiom == .pad {
@@ -170,4 +181,30 @@ class KitViewController: UIViewController {
         self.kitView?.playerOneView?.addSubview(playerOneTableView.view!)
         self.kitView?.playerTwoView?.addSubview(playerTwoTableView.view!)
     }
+    
+    
+    // 自動で消えるAlertControllerを表示する
+    func showAlertControllerAutoDelete(massage: String) {
+        let alertController = UIAlertController(title: nil, message: massage, preferredStyle: .alert)
+        // Default のaction
+        let defaultAction:UIAlertAction =
+                    UIAlertAction(title: "閉じる",
+                          style: .default,
+                          handler:{
+                            (action:UIAlertAction!) -> Void in
+                            // 処理
+                            alertController.dismiss(animated: true, completion: nil)
+                })
+        alertController.addAction(defaultAction)
+
+        self.present(alertController, animated: true, completion: nil)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            //ここに処理
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+
+
 }

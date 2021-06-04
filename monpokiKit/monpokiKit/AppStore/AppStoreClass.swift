@@ -18,18 +18,25 @@ final class AppStoreClass {
     let addBlockProductId = "addBlock"  // 広告非表示機能
     
     func isPurchasedWhenAppStart() {
-        if (UserDefaults.standard.bool(forKey:"isPurchased")) {
-            isPurchased = true
-        } else {
-            restore()
+        restore { isSuccess in
+            if (isSuccess) {
+                self.isPurchased = true
+            } else {
+                self.isPurchased = false
+            }
         }
+        
+
     }
-    func buyAdBlockFromAppStore() {
-        SwiftyStoreKit.purchaseProduct("adBlock", quantity: 1, atomically: true) { result in
+    
+    // 購入
+    func purchaseItemFromAppStore(productId: String) {
+        SwiftyStoreKit.purchaseProduct(productId, quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
                 print("Purchase Success: \(purchase.productId)")
-                            
+                AppStoreClass.shared.isPurchased = true
+                
             case .error(let error):
                 switch error.code {
                 case .unknown: print("Unknown error. Please contact support")
@@ -47,12 +54,8 @@ final class AppStoreClass {
         }
     }
     
-    // 購入
-    func purchaseProduct(_ productIdentifier: String) {
-
-    }
-    
-    func restore() {
+    // リストア
+    func restore(isSuceess: @escaping (Bool) -> Void ) {
         SwiftyStoreKit.restorePurchases(atomically: true) { result in
             for product in result.restoredPurchases {
                 if product.needsFinishTransaction {
@@ -63,14 +66,16 @@ final class AppStoreClass {
                     // プロダクトID1のリストア後の処理を記述する
                     self.isPurchased = true
                     UserDefaults.standard.set(true, forKey:"isPurchased")
+                    isSuceess(true)
+                    return
                 } else {
                     self.isPurchased = false
+                    isSuceess(false)
+                    return
                 }
-                
             }
+            isSuceess(false)
         }
     }
-
-     
 }
 
