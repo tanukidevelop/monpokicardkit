@@ -15,8 +15,8 @@ final class AppStoreClass {
     
     // 購入済みかどうか確認する
     var isPurchased = false
-    let addBlockProductId = "addBlock"  // 広告非表示機能
-    
+
+    // アプリ起動時にネットに繋いでAppStoreで購入済みか確認する（1件のみ有料アイテムを登録）
     func isPurchasedWhenAppStart() {
         restore { isSuccess in
             if (isSuccess) {
@@ -25,8 +25,6 @@ final class AppStoreClass {
                 self.isPurchased = false
             }
         }
-        
-
     }
     
     // 購入
