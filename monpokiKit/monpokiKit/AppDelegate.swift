@@ -19,17 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // スリープしない
         UIApplication.shared.isIdleTimerDisabled = true
-
-        
-        UNUserNotificationCenter.current().requestAuthorization(
-        options: [.alert, .sound, .badge]){
-            (granted, _) in
-            if granted{
-                UNUserNotificationCenter.current().delegate = self
-            } else {
-                print("通知が許可されていない")
-            }
-        }
         
         return true
     }
