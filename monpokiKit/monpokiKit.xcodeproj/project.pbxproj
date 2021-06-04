@@ -25,9 +25,6 @@
 		33645BDE2667A8970079878B /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33645BDD2667A8970079878B /* TableViewModel.swift */; };
 		33645BE22667A8B00079878B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33645BE12667A8B00079878B /* TableViewController.swift */; };
 		33645BE62667B6F90079878B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33645BE52667B6F90079878B /* TableViewController.xib */; };
-		33658B5C2668E8200014DD48 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B5A2668E8200014DD48 /* SettingsViewController.swift */; };
-		33658B5D2668E8200014DD48 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33658B5B2668E8200014DD48 /* SettingsViewController.xib */; };
-		33658B5F2668E82B0014DD48 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B5E2668E82B0014DD48 /* SettingsModel.swift */; };
 		33658B612668EB980014DD48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B602668EB980014DD48 /* settings.png */; };
 		33658B692668F6A90014DD48 /* moneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B682668F6A90014DD48 /* moneyIcon.png */; };
 		33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B76266904E00014DD48 /* AppStoreClass.swift */; };
@@ -40,7 +37,6 @@
 		338E687226651D8A001A2B16 /* coins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 338E687126651D8A001A2B16 /* coins.jpg */; };
 		3395A48F2669EE1800095CD2 /* Configuration copy.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3395A48E2669EE1800095CD2 /* Configuration copy.storekit */; };
 		3395A4912669EE5100095CD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3395A4902669EE5100095CD2 /* StoreKit.framework */; };
-		3395A495266A14CC00095CD2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395A494266A14CC00095CD2 /* Extension.swift */; };
 		361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,9 +82,6 @@
 		33645BDD2667A8970079878B /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		33645BE12667A8B00079878B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		33645BE52667B6F90079878B /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		33658B5A2668E8200014DD48 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		33658B5B2668E8200014DD48 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
-		33658B5E2668E82B0014DD48 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		33658B602668EB980014DD48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		33658B682668F6A90014DD48 /* moneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moneyIcon.png; path = ../../../../Downloads/moneyIcon.png; sourceTree = "<group>"; };
 		33658B76266904E00014DD48 /* AppStoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreClass.swift; sourceTree = "<group>"; };
@@ -101,7 +94,6 @@
 		338E687126651D8A001A2B16 /* coins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coins.jpg; sourceTree = "<group>"; };
 		3395A48E2669EE1800095CD2 /* Configuration copy.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Configuration copy.storekit"; sourceTree = "<group>"; };
 		3395A4902669EE5100095CD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		3395A494266A14CC00095CD2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitTests.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKitTests/Pods-monpokiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,14 +173,12 @@
 				3363A96F2663C0CB00EEBCED /* AppDelegate.swift */,
 				3363A9712663C0CB00EEBCED /* SceneDelegate.swift */,
 				33658B6F266900DB0014DD48 /* AppStore */,
-				33658B552668E7B60014DD48 /* Settings */,
 				33645BD92667A8140079878B /* TableView */,
 				33645BD82667A8000079878B /* Tool */,
 				3363A9752663C0CB00EEBCED /* Main.storyboard */,
 				3363A9782663C0CB00EEBCED /* Assets.xcassets */,
 				3363A97A2663C0CB00EEBCED /* LaunchScreen.storyboard */,
 				3363A97D2663C0CB00EEBCED /* Info.plist */,
-				3395A494266A14CC00095CD2 /* Extension.swift */,
 			);
 			path = monpokiKit;
 			sourceTree = "<group>";
@@ -282,40 +272,6 @@
 				33645BE52667B6F90079878B /* TableViewController.xib */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		33658B552668E7B60014DD48 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				33658B572668E7D70014DD48 /* Settings_Model */,
-				33658B582668E7E00014DD48 /* Settings_View */,
-				33658B592668E7E70014DD48 /* Settings_Controller */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		33658B572668E7D70014DD48 /* Settings_Model */ = {
-			isa = PBXGroup;
-			children = (
-				33658B5E2668E82B0014DD48 /* SettingsModel.swift */,
-			);
-			path = Settings_Model;
-			sourceTree = "<group>";
-		};
-		33658B582668E7E00014DD48 /* Settings_View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Settings_View;
-			sourceTree = "<group>";
-		};
-		33658B592668E7E70014DD48 /* Settings_Controller */ = {
-			isa = PBXGroup;
-			children = (
-				33658B5A2668E8200014DD48 /* SettingsViewController.swift */,
-				33658B5B2668E8200014DD48 /* SettingsViewController.xib */,
-			);
-			name = Settings_Controller;
 			sourceTree = "<group>";
 		};
 		33658B6F266900DB0014DD48 /* AppStore */ = {
@@ -469,7 +425,6 @@
 				338E686A26650860001A2B16 /* cointoss.png in Resources */,
 				338E686826650810001A2B16 /* reload.png in Resources */,
 				338E685D266461C2001A2B16 /* dokuro.png in Resources */,
-				33658B5D2668E8200014DD48 /* SettingsViewController.xib in Resources */,
 				33658B612668EB980014DD48 /* settings.png in Resources */,
 				3363A9DE2663C11600EEBCED /* KitView.xib in Resources */,
 				3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */,
@@ -592,15 +547,12 @@
 				3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */,
 				33645BDE2667A8970079878B /* TableViewModel.swift in Sources */,
 				3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */,
-				3395A495266A14CC00095CD2 /* Extension.swift in Sources */,
 				3363A9E82663C50000EEBCED /* PokimonStatusTableViewCell.swift in Sources */,
 				33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */,
 				3363A9E22663C45D00EEBCED /* KitModel.swift in Sources */,
 				3363A9722663C0CB00EEBCED /* SceneDelegate.swift in Sources */,
-				33658B5F2668E82B0014DD48 /* SettingsModel.swift in Sources */,
 				33645BE22667A8B00079878B /* TableViewController.swift in Sources */,
 				3363A9E02663C3FA00EEBCED /* KitView.swift in Sources */,
-				33658B5C2668E8200014DD48 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

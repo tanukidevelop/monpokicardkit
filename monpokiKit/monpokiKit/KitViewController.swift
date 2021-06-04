@@ -35,8 +35,25 @@ class KitViewController: UIViewController {
         loadTableView()
 
         kitView.settingsButton.rx.tap.subscribe({ [weak self] _ in
-            let settingsVC = SettingsViewController()
-            self?.navigationController?.pushViewController(settingsVC, animated: true)
+            let actionSheet = UIAlertController(title: "設定",
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "広告非表示機能を復元", style: .default, handler: { (action:UIAlertAction) in
+                
+            }))
+            actionSheet.addAction(UIAlertAction(title: "広告非表示機能を購入", style: .default, handler: { (action:UIAlertAction) in
+
+            }))
+            
+            // iPad の場合のみ、ActionSheetを表示するための必要な設定
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                actionSheet.popoverPresentationController?.sourceView =  kitView.settingsButton
+                let screenSize = UIScreen.main.bounds
+                actionSheet.popoverPresentationController?.sourceRect =  kitView.settingsButton.frame
+            }
+            
+            self?.present(actionSheet, animated: true, completion: nil)
+            
         }).disposed(by: disposeBag)
         
         
