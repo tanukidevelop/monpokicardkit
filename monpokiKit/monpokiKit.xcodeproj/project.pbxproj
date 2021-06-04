@@ -40,6 +40,8 @@
 		338E686A26650860001A2B16 /* cointoss.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686926650860001A2B16 /* cointoss.png */; };
 		338E686C2665090D001A2B16 /* janken.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686B2665090D001A2B16 /* janken.png */; };
 		338E687226651D8A001A2B16 /* coins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 338E687126651D8A001A2B16 /* coins.jpg */; };
+		3395A48F2669EE1800095CD2 /* Configuration copy.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3395A48E2669EE1800095CD2 /* Configuration copy.storekit */; };
+		3395A4912669EE5100095CD2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3395A4902669EE5100095CD2 /* StoreKit.framework */; };
 		361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +102,8 @@
 		338E686926650860001A2B16 /* cointoss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cointoss.png; sourceTree = "<group>"; };
 		338E686B2665090D001A2B16 /* janken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = janken.png; sourceTree = "<group>"; };
 		338E687126651D8A001A2B16 /* coins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coins.jpg; sourceTree = "<group>"; };
+		3395A48E2669EE1800095CD2 /* Configuration copy.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Configuration copy.storekit"; sourceTree = "<group>"; };
+		3395A4902669EE5100095CD2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8C9A37F7BD4233D2C4CD3 /* Pods-monpokiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKitTests.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKitTests/Pods-monpokiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DFA2E20B71108DDFC30B769 /* Pods-monpokiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.debug.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3395A4912669EE5100095CD2 /* StoreKit.framework in Frameworks */,
 				361A7668A09653F8A0FA3BA3 /* Pods_monpokiKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +145,7 @@
 		1EFA5BEEAE1C50F6A0046520 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3395A4902669EE5100095CD2 /* StoreKit.framework */,
 				35C80F4927128345BA2AF62B /* Pods_monpokiKit.framework */,
 				1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */,
 				77B73CD9EB783720915DF972 /* Pods_monpokiKitUITests.framework */,
@@ -150,6 +156,7 @@
 		3363A9632663C0CA00EEBCED = {
 			isa = PBXGroup;
 			children = (
+				3395A48E2669EE1800095CD2 /* Configuration copy.storekit */,
 				338E685E266461C6001A2B16 /* Resource */,
 				3363A96E2663C0CB00EEBCED /* monpokiKit */,
 				3363A9852663C0CB00EEBCED /* monpokiKitTests */,
@@ -460,6 +467,7 @@
 			files = (
 				338E687226651D8A001A2B16 /* coins.jpg in Resources */,
 				33658B692668F6A90014DD48 /* moneyIcon.png in Resources */,
+				3395A48F2669EE1800095CD2 /* Configuration copy.storekit in Resources */,
 				3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */,
 				338E686A26650860001A2B16 /* cointoss.png in Resources */,
 				338E686826650810001A2B16 /* reload.png in Resources */,
@@ -785,7 +793,7 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PokecaSupportApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = macbookair2020;
+				PROVISIONING_PROFILE_SPECIFIER = pokecaSupportAppProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

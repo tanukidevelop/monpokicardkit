@@ -39,7 +39,7 @@ final class DownloadProduct: NSObject {
 	
 	weak var delegate: DownloadedProductNotification?
 	
-	func callAsFunction(productIds: [String]) {
+	func callAsFunction(productIds: Set<String>) {
 		productsRequest = SKProductsRequest(productIdentifiers: Set(productIds))
 		productsRequest?.delegate = self
 		productsRequest?.start()
@@ -48,17 +48,23 @@ final class DownloadProduct: NSObject {
 
 extension DownloadProduct: SKProductsRequestDelegate {
 	func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products.isEmpty)
 		guard response.products.isEmpty else {
+            // 空ではない場合
 			delegate?.downloaded(products: nil, error: DownloadProductError.noProduct)
+            AppStoreClass.shared.isPurchasable = true
+            AppStoreClass.shared.products = response.products
 			return
 		}
 		
 		guard response.invalidProductIdentifiers.isEmpty else {
 			delegate?.downloaded(products: nil, error: DownloadProductError.invalidProduct)
+            AppStoreClass.shared.isPurchasable = true
+            AppStoreClass.shared.products = response.products
+
 			return
 		}
 		
-        AppStoreClass.shared.isPurchasable = true
 		delegate?.downloaded(products: response.products, error: nil)
 	}
 }

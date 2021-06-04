@@ -47,6 +47,8 @@ class KitViewController: UIViewController {
             self?.playerTwoTableView.tableViewModel.resetGame()
             self?.playerOneTableView.tableView.reloadData()
             self?.playerTwoTableView.tableView.reloadData()
+            
+            self?.showAdMob()
         }).disposed(by: disposeBag)
         
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
@@ -80,7 +82,6 @@ class KitViewController: UIViewController {
             
             self?.showAdMob()
         }).disposed(by: disposeBag)
-        showAdMob()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,10 +114,11 @@ class KitViewController: UIViewController {
     func showAdMob() {
         // 広告課金済みなら広告を表示しない
         
-        if (AppStoreClass.shared.isPurchased()) { return }
+        guard !AppStoreClass.shared.isPurchased() else { return }
+
         addTimer.invalidate()
         //timer処理
-        addTimer = Timer.scheduledTimer(withTimeInterval: 180.0, repeats: true, block: { (timer) in
+        addTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true, block: { (timer) in
             self.requestShowAdMob()
         })
     }

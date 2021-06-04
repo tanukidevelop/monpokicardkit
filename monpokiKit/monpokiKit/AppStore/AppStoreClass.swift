@@ -16,6 +16,9 @@ final class AppStoreClass {
     var isPurchasable = false
     var products : [SKProduct] = []
     let addBlockProductId = "addBlock"
+    private let itemIdentifiers: Set<String> = [
+        "addBlock"
+    ]
     
     func isPurchased() -> Bool {
         let isPurchased = UserDefaults.standard.bool(forKey: "isPurchased")
@@ -24,11 +27,12 @@ final class AppStoreClass {
     
     func AdBlockFromAppStoreExists(){
         // 商品情報を取得する
-        DownloadProduct.shared.callAsFunction(productIds: [addBlockProductId])
+        DownloadProduct.shared.callAsFunction(productIds:itemIdentifiers)
     }
     
     func buyAdBlockFromAppStore() {
-        if (isPurchased()) {
+        if (!isPurchased()) {
+            // 未購入なら実行する
             purchaseProduct(addBlockProductId)
         }
     }
