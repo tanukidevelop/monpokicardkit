@@ -7,7 +7,8 @@
 
 import UIKit
 import GoogleMobileAds // 追加
-
+import StoreKit
+import SwiftyStoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // スリープしない
         UIApplication.shared.isIdleTimerDisabled = true
         
+        AppStoreClass.shared.isPurchasedWhenAppStart()
+
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
     }
 
     // MARK: UISceneSession Lifecycle
@@ -37,6 +43,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func initSwiftyStorekit() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
+    }
 
 }
 

@@ -12,6 +12,7 @@ class KitView: UIView {
     @IBOutlet weak var playerOneView: UIView!
     @IBOutlet weak var playerTwoView: UIView!
     
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var cointossButton: UIButton!
     @IBOutlet weak var jankenButton: UIButton!

@@ -45,11 +45,13 @@ PODS:
   - RxRelay (6.2.0):
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
+  - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - RxCocoa
   - RxSwift
+  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
@@ -62,6 +64,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 6f5c41bf73db1656e5b203ba9c31e3d0899a128d
@@ -73,7 +76,8 @@ SPEC CHECKSUMS:
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 02a1e85780cd8cab52fbce0ed8f5cdfd1855ee51
+PODFILE CHECKSUM: a5eaf36fb004cabe4bf37479aa6ee091ddb5f562
 
 COCOAPODS: 1.10.1

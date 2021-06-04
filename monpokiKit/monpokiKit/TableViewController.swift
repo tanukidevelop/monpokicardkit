@@ -22,7 +22,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func loadTableView() {
-        
+        self.tableView.tableFooterView = UIView()
+
         tableView.isScrollEnabled = false
         UITableView.appearance().separatorInset = UIEdgeInsets.zero
         

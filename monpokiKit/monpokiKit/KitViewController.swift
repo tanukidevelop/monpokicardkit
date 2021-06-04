@@ -27,13 +27,45 @@ class KitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // StoryboardでのTweetViewControllerの親ViewがTweetListViewなので取得できる。
         guard let kitView = view as? KitView else { return }
         self.kitView = kitView
         
         loadTableView()
 
+        kitView.settingsButton.rx.tap.subscribe({ [weak self] _ in
+            let actionSheet = UIAlertController(title: "設定",
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "広告非表示機能を復元", style: .default, handler: { (action:UIAlertAction) in
+                AppStoreClass.shared.restore { isSuccess in
+                    if (isSuccess) {
+                        self?.showAlertControllerAutoDelete(massage: "復元に成功しました。")
+                    } else {
+                        self?.showAlertControllerAutoDelete(massage: "復元に失敗しました。広告非表示機能が購入されていません。")
+                    }
+                }
+            }))
+            
+            if (!AppStoreClass.shared.isPurchased) {
+                actionSheet.addAction(UIAlertAction(title: "広告非表示機能を購入", style: .default, handler: { (action:UIAlertAction) in
+                    AppStoreClass.shared.purchaseItemFromAppStore(productId: "adBlock")
+                }))
+            }
+
+            
+            // iPad の場合のみ、ActionSheetを表示するための必要な設定
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                actionSheet.popoverPresentationController?.sourceView =  kitView.settingsButton
+                let screenSize = UIScreen.main.bounds
+                actionSheet.popoverPresentationController?.sourceRect =  kitView.settingsButton.frame
+            }
+            
+            self?.present(actionSheet, animated: true, completion: nil)
+            
+        }).disposed(by: disposeBag)
+        
         
         kitView.reloadButton.rx.tap.subscribe({ [weak self] _ in
             self?.kitView?.gx1pSwitch.setOn(false, animated: false)
@@ -42,6 +74,8 @@ class KitViewController: UIViewController {
             self?.playerTwoTableView.tableViewModel.resetGame()
             self?.playerOneTableView.tableView.reloadData()
             self?.playerTwoTableView.tableView.reloadData()
+            
+            self?.showAdMob()
         }).disposed(by: disposeBag)
         
         kitView.cointossButton.rx.tap.subscribe({ [weak self] _ in
@@ -61,10 +95,15 @@ class KitViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func requestShowAdMob() {
         let request = GADRequest()
         
-        // adId:ca-app-pub-7248782092625183/3345264085
+        // myAdmobID:ca-app-pub-7248782092625183/3345264085
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/3345264085",
                                request: request,
                                completionHandler: { [self] ad, error in
@@ -84,11 +123,18 @@ class KitViewController: UIViewController {
     }
     
     func showAdMob() {
+        guard !(AppStoreClass.shared.isPurchased)  else {
+            // 課金済みの場合はタイマー処理に行かせないで終える
+            return
+        }
+        // 広告課金済みなら広告を表示しない
         addTimer.invalidate()
         //timer処理
         addTimer = Timer.scheduledTimer(withTimeInterval: 180.0, repeats: true, block: { (timer) in
-            self.requestShowAdMob()
+            // クロージャの変数のキャプチャを考慮して広告表示自体の処理にもif文を設ける
+            if (!AppStoreClass.shared.isPurchased) { self.requestShowAdMob() }
         })
+        
     }
     
     
