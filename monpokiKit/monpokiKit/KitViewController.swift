@@ -95,6 +95,12 @@ class KitViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UpgradeNotice.shared.fire()
+    }
+    
     func requestShowAdMob() {
         let request = GADRequest()
         
