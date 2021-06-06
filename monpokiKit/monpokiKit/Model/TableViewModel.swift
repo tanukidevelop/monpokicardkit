@@ -32,6 +32,11 @@ class TableViewModel {
             cellStatus.fire = false
         }
         
+        cell.settingsButton.isHidden = false
+        cell.poisonImageView.isHidden = false
+        cell.poisonLabel.isHidden = (cell.status?.poison == false)
+        cell.fireLabel.isHidden = (cell.status?.fire == false)
+        
         if (cellStatus.damage > 0) {
             cell.damageLabel?.text = String(cellStatus.damage)
             cell.damageLabel.isHidden = false
@@ -41,12 +46,14 @@ class TableViewModel {
             cell.damageLabel.isHidden = true
             cell.recoveryButton.isHidden = true
             cell.recoveryImageView.isHidden = true
+            
+            // ベンチポケモンはダメージ0の場合は特殊状態アイコンを設定しない。
+            if (indexPath.section == 1) {
+                cell.settingsButton.isHidden = true
+                cell.poisonImageView.isHidden = true
+            }
         }
-        
-        cell.poisonLabel.isHidden = (cell.status?.poison == false)
-        cell.fireLabel.isHidden = (cell.status?.fire == false)
-        cell.settingsButton.isHidden = (indexPath.section == 1) // バトル場では設定ボタンを表示する
-        cell.poisonImageView.isHidden = (indexPath.section == 1) // バトル場では設定ボタンを表示する
+
     }
     
     func resetStatus(statsuModel: pokimonStatusModel){
