@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16D5956250CB33C7AFAEB00B /* Pods_monpokiKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B73CD9EB783720915DF972 /* Pods_monpokiKitUITests.framework */; };
 		2E6758F60E61F853453B7C80 /* Pods_monpokiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */; };
+		335AD621266CAF1200E42E76 /* moneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AD620266CAF1200E42E76 /* moneyIcon.png */; };
 		3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A96F2663C0CB00EEBCED /* AppDelegate.swift */; };
 		3363A9722663C0CB00EEBCED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A9712663C0CB00EEBCED /* SceneDelegate.swift */; };
 		3363A9772663C0CB00EEBCED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3363A9752663C0CB00EEBCED /* Main.storyboard */; };
@@ -26,7 +27,6 @@
 		33645BE22667A8B00079878B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33645BE12667A8B00079878B /* TableViewController.swift */; };
 		33645BE62667B6F90079878B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33645BE52667B6F90079878B /* TableViewController.xib */; };
 		33658B612668EB980014DD48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B602668EB980014DD48 /* settings.png */; };
-		33658B692668F6A90014DD48 /* moneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B682668F6A90014DD48 /* moneyIcon.png */; };
 		33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B76266904E00014DD48 /* AppStoreClass.swift */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
@@ -60,6 +60,7 @@
 /* Begin PBXFileReference section */
 		1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		293E533B0E84C041E5587576 /* Pods-monpokiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.release.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.release.xcconfig"; sourceTree = "<group>"; };
+		335AD620266CAF1200E42E76 /* moneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneyIcon.png; sourceTree = "<group>"; };
 		3363A96C2663C0CB00EEBCED /* monpokiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monpokiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3363A96F2663C0CB00EEBCED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3363A9712663C0CB00EEBCED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		33645BE12667A8B00079878B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		33645BE52667B6F90079878B /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		33658B602668EB980014DD48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		33658B682668F6A90014DD48 /* moneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moneyIcon.png; path = ../../../../Downloads/moneyIcon.png; sourceTree = "<group>"; };
 		33658B76266904E00014DD48 /* AppStoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreClass.swift; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 		338E685E266461C6001A2B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				33658B682668F6A90014DD48 /* moneyIcon.png */,
+				335AD620266CAF1200E42E76 /* moneyIcon.png */,
 				33658B602668EB980014DD48 /* settings.png */,
 				338E687126651D8A001A2B16 /* coins.jpg */,
 				338E686726650810001A2B16 /* reload.png */,
@@ -419,7 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				338E687226651D8A001A2B16 /* coins.jpg in Resources */,
-				33658B692668F6A90014DD48 /* moneyIcon.png in Resources */,
 				3395A48F2669EE1800095CD2 /* Configuration copy.storekit in Resources */,
 				3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */,
 				338E686A26650860001A2B16 /* cointoss.png in Resources */,
@@ -427,6 +426,7 @@
 				338E685D266461C2001A2B16 /* dokuro.png in Resources */,
 				33658B612668EB980014DD48 /* settings.png in Resources */,
 				3363A9DE2663C11600EEBCED /* KitView.xib in Resources */,
+				335AD621266CAF1200E42E76 /* moneyIcon.png in Resources */,
 				3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */,
 				338E6860266462E9001A2B16 /* heart.png in Resources */,
 				3363A9792663C0CB00EEBCED /* Assets.xcassets in Resources */,

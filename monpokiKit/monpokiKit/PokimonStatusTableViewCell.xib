@@ -24,18 +24,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3T9-b9-j2C">
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-2s-8q5" userLabel="DamageLabel">
-                                        <rect key="frame" x="20" y="5" width="95" height="70"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110形" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-2s-8q5" userLabel="DamageLabel">
+                                        <rect key="frame" x="15" y="0.0" width="100" height="80"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="dgS-2s-8q5" firstAttribute="top" secondItem="3T9-b9-j2C" secondAttribute="top" constant="5" id="0uJ-Jf-ruA"/>
-                                    <constraint firstItem="dgS-2s-8q5" firstAttribute="leading" secondItem="3T9-b9-j2C" secondAttribute="leading" constant="20" id="Eq8-RE-1yo"/>
-                                    <constraint firstAttribute="bottom" secondItem="dgS-2s-8q5" secondAttribute="bottom" constant="5" id="IOe-rc-d40"/>
+                                    <constraint firstItem="dgS-2s-8q5" firstAttribute="top" secondItem="3T9-b9-j2C" secondAttribute="top" id="0uJ-Jf-ruA"/>
+                                    <constraint firstItem="dgS-2s-8q5" firstAttribute="leading" secondItem="3T9-b9-j2C" secondAttribute="leading" constant="15" id="Eq8-RE-1yo"/>
+                                    <constraint firstAttribute="bottom" secondItem="dgS-2s-8q5" secondAttribute="bottom" id="IOe-rc-d40"/>
                                     <constraint firstAttribute="trailing" secondItem="dgS-2s-8q5" secondAttribute="trailing" constant="5" id="hMQ-cT-rtp"/>
                                 </constraints>
                             </view>
