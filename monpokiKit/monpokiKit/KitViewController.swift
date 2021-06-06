@@ -68,12 +68,7 @@ class KitViewController: UIViewController {
         
         
         kitView.reloadButton.rx.tap.subscribe({ [weak self] _ in
-            self?.kitView?.gx1pSwitch.setOn(false, animated: false)
-            self?.kitView?.gx2pSwitch.setOn(false, animated: false)
-            self?.playerOneTableView.tableViewModel.resetGame()
-            self?.playerTwoTableView.tableViewModel.resetGame()
-            self?.playerOneTableView.tableView.reloadData()
-            self?.playerTwoTableView.tableView.reloadData()
+            self?.showAlertController(massage: "ゲーム状況をリセットしてよろしいでしょうか。")
             
             self?.showAdMob()
         }).disposed(by: disposeBag)
@@ -168,6 +163,36 @@ class KitViewController: UIViewController {
             //ここに処理
             alertController.dismiss(animated: true, completion: nil)
         }
-        
+    }
+    
+    func showAlertController(massage: String){
+        let alertController = UIAlertController(title: nil, message: massage, preferredStyle: .alert)
+        // Default のaction
+        let defaultAction:UIAlertAction =
+                    UIAlertAction(title: "OK",
+                          style: .default,
+                          handler:{
+                            (action:UIAlertAction!) -> Void in
+                            // 処理
+                            self.kitView?.gx1pSwitch.setOn(false, animated: false)
+                            self.kitView?.gx2pSwitch.setOn(false, animated: false)
+                            self.playerOneTableView.tableViewModel.resetGame()
+                            self.playerTwoTableView.tableViewModel.resetGame()
+                            self.playerOneTableView.tableView.reloadData()
+                            self.playerTwoTableView.tableView.reloadData()
+                            alertController.dismiss(animated: true, completion: nil)
+                })
+        let cancelAction:UIAlertAction =
+                    UIAlertAction(title: "キャンセル",
+                                  style: UIAlertAction.Style.cancel,
+                          handler:{
+                            (action:UIAlertAction!) -> Void in
+                            // 処理
+                            alertController.dismiss(animated: true, completion: nil)
+                })
+        alertController.addAction(defaultAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+
     }
 }
