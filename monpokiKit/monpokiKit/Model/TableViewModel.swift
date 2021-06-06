@@ -26,7 +26,7 @@ class TableViewModel {
         var cellStatus: pokimonStatusModel
         cellStatus = self.statusList[(indexPath.section + indexPath.row)]
 
-        
+        // ベンチは毒・やけどは回復する
         if (indexPath.section == 1) {
             cellStatus.poison = false
             cellStatus.fire = false
@@ -34,31 +34,19 @@ class TableViewModel {
         
         if (cellStatus.damage > 0) {
             cell.damageLabel?.text = String(cellStatus.damage)
-
             cell.damageLabel.isHidden = false
-            cell.poisonLabel.isHidden = !(cell.status?.poison == true)
-            cell.fireLabel.isHidden = !((cell.status?.fire == true))
-            
-            if (indexPath.section == 1) {
-                // ベンチは異常状態にならない
-                cell.poisonLabel.isHidden = true
-                cell.fireLabel.isHidden = true
-            }
             cell.recoveryButton.isHidden = false
-            cell.settingsButton.isHidden = false
             cell.recoveryImageView.isHidden = false
-            cell.poisonImageView.isHidden = false
-            
         } else {
-            // ダメージ
             cell.damageLabel.isHidden = true
-            cell.poisonLabel.isHidden = true
-            cell.fireLabel.isHidden = true
             cell.recoveryButton.isHidden = true
-            cell.settingsButton.isHidden = true
             cell.recoveryImageView.isHidden = true
-            cell.poisonImageView.isHidden = true
         }
+        
+        cell.poisonLabel.isHidden = (cell.status?.poison == false)
+        cell.fireLabel.isHidden = (cell.status?.fire == false)
+        cell.settingsButton.isHidden = (indexPath.section == 1) // バトル場では設定ボタンを表示する
+        cell.poisonImageView.isHidden = (indexPath.section == 1) // バトル場では設定ボタンを表示する
     }
     
     func resetStatus(statsuModel: pokimonStatusModel){
