@@ -188,7 +188,7 @@ class KitViewController: UIViewController {
         // 広告課金済みなら広告を表示しない
         addTimer.invalidate()
         //timer処理
-        addTimer = Timer.scheduledTimer(withTimeInterval: 180.0, repeats: true, block: { (timer) in
+        addTimer = Timer.scheduledTimer(withTimeInterval: 120.0, repeats: true, block: { (timer) in
             // クロージャの変数のキャプチャを考慮して広告表示自体の処理にもif文を設ける
             if (!AppStoreClass.shared.isPurchased) { self.requestShowAdMob() }
         })
