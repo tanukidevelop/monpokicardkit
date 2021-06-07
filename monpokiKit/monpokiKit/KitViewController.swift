@@ -118,7 +118,6 @@ class KitViewController: UIViewController {
         
         kitView.reloadButton.rx.tap.subscribe({ [weak self] _ in
             self?.showAlertController(massage: "ゲーム状況をリセットしてよろしいでしょうか。")
-            
             self?.showAdMob()
         }).disposed(by: disposeBag)
         
@@ -244,6 +243,12 @@ class KitViewController: UIViewController {
                             self.playerOneTableView.tableView.reloadData()
                             self.playerTwoTableView.tableView.reloadData()
                             alertController.dismiss(animated: true, completion: nil)
+                            
+                            // ストップウォッチ機能をリセット
+                            self.ourTimer.invalidate()
+                            self.timerStop = false
+                            self.TimerDisplayed = 0
+                            self.kitView?.timerLabel.text = ""
                 })
         let cancelAction:UIAlertAction =
                     UIAlertAction(title: "キャンセル",
