@@ -27,6 +27,21 @@ final class AppStoreClass {
         }
     }
     
+    func getProductInfo()  {
+        SwiftyStoreKit.retrieveProductsInfo([StructConstaints.PRODUCT_ID]) { result in
+            if let product = result.retrievedProducts.first {
+                let priceString = product.localizedPrice!
+                print("Product: \(product.localizedDescription), price: \(priceString)")
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+                print("Invalid product identifier: \(invalidProductId)")
+            }
+            else {
+                print("Error: \(result.error)")
+            }
+        }
+    }
+    
     // 購入
     func purchaseItemFromAppStore(productId: String) {
         SwiftyStoreKit.purchaseProduct(productId, quantity: 1, atomically: true) { result in

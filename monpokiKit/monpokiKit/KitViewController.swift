@@ -98,6 +98,7 @@ class KitViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        AppStoreClass.shared.getProductInfo()
         UpgradeNotice.shared.fire()
     }
     
