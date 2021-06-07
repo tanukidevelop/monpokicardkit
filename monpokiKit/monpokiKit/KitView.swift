@@ -16,9 +16,11 @@ class KitView: UIView {
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var cointossButton: UIButton!
     @IBOutlet weak var jankenButton: UIButton!
-    @IBOutlet weak var gx1pSwitch: UISwitch!
-    @IBOutlet weak var gx2pSwitch: UISwitch!
     
+    @IBOutlet weak var GxMakerPlayerOne: UIImageView!
+    @IBOutlet weak var GxMakerPlayerOneButton: UIButton!
+    @IBOutlet weak var GxMakerPlayerTwo: UIImageView!
+    @IBOutlet weak var GxMakerPlayerTwoButton: UIButton!
     
     override init(frame: CGRect){
         super.init(frame: frame)

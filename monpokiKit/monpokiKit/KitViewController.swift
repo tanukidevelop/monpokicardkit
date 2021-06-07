@@ -16,7 +16,9 @@ class KitViewController: UIViewController {
     
     var addTimer = Timer()
     let disposeBag = DisposeBag()
-    
+    let nogxmaker = UIImage(named:"gxmaker_off")
+    let gxmakerused = UIImage(named:"gxmaker_used")
+
     
     var kitView : KitView?
     var kitModel = KitModel()
@@ -34,6 +36,26 @@ class KitViewController: UIViewController {
         
         loadTableView()
 
+        
+        kitView.GxMakerPlayerOne.image = nogxmaker
+        kitView.GxMakerPlayerOneButton.rx.tap.subscribe({ [weak self] _ in
+            if (kitView.GxMakerPlayerOne.image == self?.nogxmaker) {
+                kitView.GxMakerPlayerOne.image = self?.gxmakerused
+            } else {
+                kitView.GxMakerPlayerOne.image = self?.nogxmaker
+            }
+        }).disposed(by: disposeBag)
+        
+        kitView.GxMakerPlayerTwo.image = nogxmaker
+        kitView.GxMakerPlayerTwoButton.rx.tap.subscribe({ [weak self] _ in
+            if (kitView.GxMakerPlayerTwo.image == self?.nogxmaker) {
+                kitView.GxMakerPlayerTwo.image = self?.gxmakerused
+            } else {
+                kitView.GxMakerPlayerTwo.image = self?.nogxmaker
+            }
+
+        }).disposed(by: disposeBag)
+        
         kitView.settingsButton.rx.tap.subscribe({ [weak self] _ in
             let actionSheet = UIAlertController(title: "設定",
                                                 message: nil,
@@ -181,8 +203,8 @@ class KitViewController: UIViewController {
                           handler:{
                             (action:UIAlertAction!) -> Void in
                             // 処理
-                            self.kitView?.gx1pSwitch.setOn(false, animated: false)
-                            self.kitView?.gx2pSwitch.setOn(false, animated: false)
+                            self.kitView?.GxMakerPlayerOne.image = self.nogxmaker
+                            self.kitView?.GxMakerPlayerTwo.image = self.nogxmaker
                             self.playerOneTableView.tableViewModel.resetGame()
                             self.playerTwoTableView.tableViewModel.resetGame()
                             self.playerOneTableView.tableView.reloadData()
