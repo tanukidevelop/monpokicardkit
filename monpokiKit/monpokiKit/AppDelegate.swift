@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
         
         AppStoreClass.shared.isPurchasedWhenAppStart()
-
+        initSwiftyStorekit()
         return true
     }
     
