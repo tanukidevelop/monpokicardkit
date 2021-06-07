@@ -22,6 +22,10 @@ class KitView: UIView {
     @IBOutlet weak var GxMakerPlayerTwo: UIImageView!
     @IBOutlet weak var GxMakerPlayerTwoButton: UIButton!
     
+    @IBOutlet weak var startTimerButton: UIButton!
+    @IBOutlet weak var stopTimerButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         loadNib()

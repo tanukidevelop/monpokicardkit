@@ -12,6 +12,10 @@ import GoogleMobileAds
 
 
 class KitViewController: UIViewController {
+    var ourTimer = Timer()
+    var TimerDisplayed = 0
+    var timerStop = false
+    
     private var interstitial: GADInterstitialAd?
     
     var addTimer = Timer()
@@ -36,6 +40,25 @@ class KitViewController: UIViewController {
         
         loadTableView()
 
+        kitView.startTimerButton.rx.tap.subscribe({ [weak self] _ in
+            self?.timerStop = false
+            self?.ourTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self?.Action), userInfo: nil, repeats: true)
+        }).disposed(by: disposeBag)
+        
+        kitView.stopTimerButton.rx.tap.subscribe({ [weak self] _ in
+            self?.ourTimer.invalidate()
+            if (self?.timerStop == true) {
+                // ストップしている時
+                self?.timerStop = false
+                self?.TimerDisplayed = 0
+                self?.kitView?.timerLabel.text = ""
+            } else {
+                // 現在カウント中の場合
+                self?.timerStop = true
+            }
+
+        }).disposed(by: disposeBag)
+        
         
         kitView.GxMakerPlayerOne.image = nogxmaker
         kitView.GxMakerPlayerOneButton.rx.tap.subscribe({ [weak self] _ in
@@ -119,9 +142,16 @@ class KitViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        AppStoreClass.shared.getProductInfo()
         UpgradeNotice.shared.fire()
+    }
+    
+    // ストップウォッチ機能
+    @objc func Action() {
+        TimerDisplayed += 1
+        let minute = String(TimerDisplayed / 60)
+        var second = String(TimerDisplayed % 60)
+        if (second.count == 1) { second = "0" + second }
+        kitView?.timerLabel.text = String(minute + ":" + second)
     }
     
     func requestShowAdMob() {
