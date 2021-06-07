@@ -16,15 +16,16 @@ final class AppStoreClass {
     // 購入済みかどうか確認する
     var isPurchased = false
 
-    // アプリ起動時にネットに繋いでAppStoreで購入済みか確認する（1件のみ有料アイテムを登録）
-    func isPurchasedWhenAppStart() {
-        restore { isSuccess in
-            if (isSuccess) {
-                self.isPurchased = true
-            } else {
-                self.isPurchased = false
-            }
-        }
+    // 購入済みを保存する
+    func savePurchased() {
+        self.isPurchased = true
+        UserDefaults.standard.set(self.isPurchased, forKey: "isPurchased")
+    }
+    
+    // 購入済みかどうかを読み込んで確認する
+    func loadPurchased() {
+        let isPurchased = UserDefaults.standard.bool(forKey: "isPurchased")
+        self.isPurchased = isPurchased
     }
     
     func getProductInfo()  {
@@ -48,7 +49,7 @@ final class AppStoreClass {
             switch result {
             case .success(let purchase):
                 print("Purchase Success: \(purchase.productId)")
-                AppStoreClass.shared.isPurchased = true
+                AppStoreClass.shared.savePurchased()
                 
             case .error(let error):
                 switch error.code {
@@ -78,7 +79,7 @@ final class AppStoreClass {
                 if product.productId == StructConstaints.PRODUCT_ID {
                     // プロダクトID1のリストア後の処理を記述する
                     self.isPurchased = true
-                    UserDefaults.standard.set(true, forKey:"isPurchased")
+                    AppStoreClass.shared.savePurchased()
                     isSuceess(true)
                     return
                 } else {

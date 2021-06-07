@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // スリープしない
         UIApplication.shared.isIdleTimerDisabled = true
         
-        AppStoreClass.shared.isPurchasedWhenAppStart()
+        // 読み込む
+        AppStoreClass.shared.loadPurchased()
         initSwiftyStorekit()
         return true
     }
