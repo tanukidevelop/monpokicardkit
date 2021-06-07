@@ -41,11 +41,13 @@ class KitViewController: UIViewController {
         loadTableView()
 
         kitView.startTimerButton.rx.tap.subscribe({ [weak self] _ in
+            self?.showAdMob()
             self?.timerStop = false
             self?.ourTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self?.Action), userInfo: nil, repeats: true)
         }).disposed(by: disposeBag)
         
         kitView.stopTimerButton.rx.tap.subscribe({ [weak self] _ in
+            self?.showAdMob()
             self?.ourTimer.invalidate()
             if (self?.timerStop == true) {
                 // ストップしている時
@@ -62,6 +64,7 @@ class KitViewController: UIViewController {
         
         kitView.GxMakerPlayerOne.image = nogxmaker
         kitView.GxMakerPlayerOneButton.rx.tap.subscribe({ [weak self] _ in
+            self?.showAdMob()
             if (kitView.GxMakerPlayerOne.image == self?.nogxmaker) {
                 kitView.GxMakerPlayerOne.image = self?.gxmakerused
             } else {
@@ -71,6 +74,7 @@ class KitViewController: UIViewController {
         
         kitView.GxMakerPlayerTwo.image = nogxmaker
         kitView.GxMakerPlayerTwoButton.rx.tap.subscribe({ [weak self] _ in
+            self?.showAdMob()
             if (kitView.GxMakerPlayerTwo.image == self?.nogxmaker) {
                 kitView.GxMakerPlayerTwo.image = self?.gxmakerused
             } else {
