@@ -50,7 +50,7 @@ class KitViewController: UIViewController {
             
             if (!AppStoreClass.shared.isPurchased) {
                 actionSheet.addAction(UIAlertAction(title: "広告非表示機能を購入", style: .default, handler: { (action:UIAlertAction) in
-                    AppStoreClass.shared.purchaseItemFromAppStore(productId: "adBlock")
+                    AppStoreClass.shared.purchaseItemFromAppStore(productId: StructConstaints.PRODUCT_ID)
                 }))
             }
 

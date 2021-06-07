@@ -60,7 +60,7 @@ final class AppStoreClass {
                     SwiftyStoreKit.finishTransaction(product.transaction)
                 }
                 
-                if product.productId == "adBlock" {
+                if product.productId == StructConstaints.PRODUCT_ID {
                     // プロダクトID1のリストア後の処理を記述する
                     self.isPurchased = true
                     UserDefaults.standard.set(true, forKey:"isPurchased")
