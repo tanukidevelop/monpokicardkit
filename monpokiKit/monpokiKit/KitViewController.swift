@@ -121,6 +121,8 @@ class KitViewController: UIViewController {
                 let screenSize = UIScreen.main.bounds
                 actionSheet.popoverPresentationController?.sourceRect =  kitView.settingsButton.frame
             }
+            actionSheet.addAction(UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.destructive, handler: { (action:UIAlertAction) in
+            }))
             
             self?.present(actionSheet, animated: true, completion: nil)
             
