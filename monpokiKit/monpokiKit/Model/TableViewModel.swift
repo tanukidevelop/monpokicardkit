@@ -56,6 +56,29 @@ class TableViewModel {
                 cell.poisonImageView.isHidden = true
             }
         }
+        
+        if (indexPath.section == 1) {
+            switch indexPath.row {
+            case 0:
+                cell.numberLabel?.text = "①"
+            case 1:
+                cell.numberLabel?.text = "②"
+            case 2:
+                cell.numberLabel?.text = "③"
+            case 3:
+                cell.numberLabel?.text = "④"
+            case 4:
+                cell.numberLabel?.text = "⑤"
+            case 5:
+                cell.numberLabel?.text = "⑥"
+            case 6:
+                cell.numberLabel?.text = "⑦"
+            case 7:
+                cell.numberLabel?.text = "⑧"
+            default:
+                break
+            }
+        }
 
     }
     

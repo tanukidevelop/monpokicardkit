@@ -12,6 +12,7 @@ class PokimonStatusTableViewCell: UITableViewCell {
     var exist = false // ポキモンが存在しているかどうか
     var status: pokimonStatusModel?
     
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var damageLabel: UILabel!
     @IBOutlet weak var master: UIStackView!
     @IBOutlet weak var poisonLabel: UILabel!
