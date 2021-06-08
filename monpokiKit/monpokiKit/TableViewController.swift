@@ -102,16 +102,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }))
         }
         
-        actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .destructive, handler: { (action:UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
             var selectStatus = self.tableViewModel.statusList[(indexPath.section + indexPath.row)]
             self.tableViewModel.resetStatus(statsuModel: selectStatus)
             self.tableView.reloadData()
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
-            self.tableViewModel.statusList.remove(at: (indexPath.section + indexPath.row))
-            let newStatusModel = pokimonStatusModel()
-            self.tableViewModel.statusList.insert(newStatusModel, at: (indexPath.section + indexPath.row))
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .destructive, handler: { (action:UIAlertAction) in
         }))
         // iPad の場合のみ、ActionSheetを表示するための必要な設定
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -154,12 +151,12 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }))
             }
             
-            actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .destructive, handler: { (action:UIAlertAction) in
+            actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
                 var selectedStatus = self?.tableViewModel.statusList[(indexPath.section + indexPath.row)]
                 self?.tableViewModel.resetStatus(statsuModel: selectedStatus!)
                 tableView.reloadData()
             }))
-            actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action:UIAlertAction) in
+            actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .destructive, handler: { (action:UIAlertAction) in
             }))
             // iPad の場合のみ、ActionSheetを表示するための必要な設定
             if UIDevice.current.userInterfaceIdiom == .pad {
