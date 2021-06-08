@@ -16,6 +16,9 @@ class TableViewModel {
         pokimonStatusModel(),
         pokimonStatusModel(),
         pokimonStatusModel(),
+        pokimonStatusModel(),
+        pokimonStatusModel(),
+        pokimonStatusModel(),
         pokimonStatusModel()]
     
     init() {
@@ -64,6 +67,9 @@ class TableViewModel {
     
     func resetGame() {
         statusList = [
+            pokimonStatusModel(),
+            pokimonStatusModel(),
+            pokimonStatusModel(),
             pokimonStatusModel(),
             pokimonStatusModel(),
             pokimonStatusModel(),

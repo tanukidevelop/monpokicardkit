@@ -13,6 +13,8 @@ import RxSwift
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let disposeBag = DisposeBag()
     var tableViewModel = TableViewModel()
+    public var isActiveMugenzone = false // ムゲンゾーン表示（デフォルトはOFF）
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -87,6 +89,18 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         actionSheet.addAction(UIAlertAction(title: "ベンチ5へ移動", style: .default, handler: { (action:UIAlertAction) in
             changePokimon(index: 5)
         }))
+        
+        if (self.isActiveMugenzone) {
+            actionSheet.addAction(UIAlertAction(title: "ベンチ6へ移動", style: .default, handler: { (action:UIAlertAction) in
+                changePokimon(index: 6)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "ベンチ7へ移動", style: .default, handler: { (action:UIAlertAction) in
+                changePokimon(index: 7)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "ベンチ8へ移動", style: .default, handler: { (action:UIAlertAction) in
+                changePokimon(index: 8)
+            }))
+        }
         
         actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .destructive, handler: { (action:UIAlertAction) in
             var selectStatus = self.tableViewModel.statusList[(indexPath.section + indexPath.row)]
@@ -172,7 +186,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
             // 使用デバイスがiPadの場合
-            return 80
+            if (isActiveMugenzone) {
+                // ムゲンゾーンが有効の時
+                return 60
+            } else {
+                // 通常の時
+                return 80
+            }
         } else {
             // 使用デバイスがiPhoneの場合
             return 40
@@ -180,8 +200,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 2
     }
+    
     // Sectioのタイトル
     func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String? {
@@ -201,7 +222,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case 0:
             return 1
         case 1:
-            return 5
+            if (isActiveMugenzone) {
+                // ムゲンゾーンが有効な時
+                return 8
+            } else {
+                // 通常時
+                return 5
+            }
         default:
             return 0
         }
@@ -212,6 +239,18 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         selectedStatus = tableViewModel.statusList[(indexPath.section + indexPath.row)]
         selectedStatus.damage += 10
         tableView.reloadData()
+    }
+    
+    // ムゲンゾーン⇄通常モンスターを入れ替える
+    public func changeActiveMugenzone() {
+        isActiveMugenzone = !(isActiveMugenzone)
+        self.tableView.reloadData()
+    }
+    
+    // ムゲンゾーン⇄通常モンスターを入れ替える
+    public func InActiveMugenzone() {
+        isActiveMugenzone = false
+        self.tableView.reloadData()
     }
 }
 
