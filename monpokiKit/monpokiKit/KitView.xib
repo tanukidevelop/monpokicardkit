@@ -72,7 +72,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3E-Uz-1f8">
                                     <rect key="frame" x="74.5" y="0.0" width="121.5" height="60"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gxmaker_off.png" translatesAutoresizingMaskIntoConstraints="NO" id="sWb-4l-UDR">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gaxmaker_off.png" translatesAutoresizingMaskIntoConstraints="NO" id="sWb-4l-UDR">
                                             <rect key="frame" x="0.0" y="0.0" width="121.5" height="60"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3W-hE-H1q">
@@ -248,7 +248,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S4-jX-bjt">
                                     <rect key="frame" x="687" y="0.0" width="121" height="60"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gxmaker_used.png" translatesAutoresizingMaskIntoConstraints="NO" id="UPl-vW-tP6">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gaxmaker_used.png" translatesAutoresizingMaskIntoConstraints="NO" id="UPl-vW-tP6">
                                             <rect key="frame" x="0.0" y="0.0" width="121" height="60"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxS-4C-0Z1">
@@ -386,8 +386,8 @@
     <resources>
         <image name="Timer.png" width="256" height="256"/>
         <image name="cointoss.png" width="256" height="256"/>
-        <image name="gxmaker_off.png" width="1200" height="500"/>
-        <image name="gxmaker_used.png" width="1200" height="500"/>
+        <image name="gaxmaker_off.png" width="1200" height="500"/>
+        <image name="gaxmaker_used.png" width="1200" height="500"/>
         <image name="janken.png" width="256" height="256"/>
         <image name="reload.png" width="256" height="256"/>
         <image name="settings.png" width="256" height="256"/>

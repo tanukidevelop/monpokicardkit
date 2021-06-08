@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		16D5956250CB33C7AFAEB00B /* Pods_monpokiKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B73CD9EB783720915DF972 /* Pods_monpokiKitUITests.framework */; };
 		2E6758F60E61F853453B7C80 /* Pods_monpokiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */; };
-		3325836C266E656500C32F73 /* gxmaker_used.png in Resources */ = {isa = PBXBuildFile; fileRef = 3325836A266E656500C32F73 /* gxmaker_used.png */; };
-		3325836D266E656500C32F73 /* gxmaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 3325836B266E656500C32F73 /* gxmaker_off.png */; };
 		3325836F266E6F2F00C32F73 /* startTimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3325836E266E6F2F00C32F73 /* startTimer.png */; };
 		33258371266E6F4600C32F73 /* stopTimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 33258370266E6F4600C32F73 /* stopTimer.png */; };
 		33258373266E700300C32F73 /* Timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 33258372266E700300C32F73 /* Timer.png */; };
@@ -35,6 +33,8 @@
 		33645BE62667B6F90079878B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33645BE52667B6F90079878B /* TableViewController.xib */; };
 		33658B612668EB980014DD48 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 33658B602668EB980014DD48 /* settings.png */; };
 		33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B76266904E00014DD48 /* AppStoreClass.swift */; };
+		33767E4A266F16960006CEA7 /* gxmaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 33767E48266F16960006CEA7 /* gxmaker_off.png */; };
+		33767E4B266F16960006CEA7 /* gxmaker_used.png in Resources */ = {isa = PBXBuildFile; fileRef = 33767E49266F16960006CEA7 /* gxmaker_used.png */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
 		338E686226646335001A2B16 /* heartCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686126646335001A2B16 /* heartCard.png */; };
@@ -68,8 +68,6 @@
 /* Begin PBXFileReference section */
 		1D0BCE59755C35FD53D9DA55 /* Pods_monpokiKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monpokiKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		293E533B0E84C041E5587576 /* Pods-monpokiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monpokiKit.release.xcconfig"; path = "Target Support Files/Pods-monpokiKit/Pods-monpokiKit.release.xcconfig"; sourceTree = "<group>"; };
-		3325836A266E656500C32F73 /* gxmaker_used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gxmaker_used.png; path = ../../../../Desktop/gxmaker_used.png; sourceTree = "<group>"; };
-		3325836B266E656500C32F73 /* gxmaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gxmaker_off.png; path = ../../../../Desktop/gxmaker_off.png; sourceTree = "<group>"; };
 		3325836E266E6F2F00C32F73 /* startTimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startTimer.png; sourceTree = "<group>"; };
 		33258370266E6F4600C32F73 /* stopTimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopTimer.png; sourceTree = "<group>"; };
 		33258372266E700300C32F73 /* Timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Timer.png; sourceTree = "<group>"; };
@@ -100,6 +98,8 @@
 		33645BE52667B6F90079878B /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		33658B602668EB980014DD48 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		33658B76266904E00014DD48 /* AppStoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreClass.swift; sourceTree = "<group>"; };
+		33767E48266F16960006CEA7 /* gxmaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gxmaker_off.png; sourceTree = "<group>"; };
+		33767E49266F16960006CEA7 /* gxmaker_used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gxmaker_used.png; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		338E686126646335001A2B16 /* heartCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCard.png; sourceTree = "<group>"; };
@@ -303,12 +303,12 @@
 		338E685E266461C6001A2B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				33767E48266F16960006CEA7 /* gxmaker_off.png */,
+				33767E49266F16960006CEA7 /* gxmaker_used.png */,
 				3325836E266E6F2F00C32F73 /* startTimer.png */,
 				33258370266E6F4600C32F73 /* stopTimer.png */,
 				33258374266E725800C32F73 /* oneStopTimer.png */,
 				33258372266E700300C32F73 /* Timer.png */,
-				3325836B266E656500C32F73 /* gxmaker_off.png */,
-				3325836A266E656500C32F73 /* gxmaker_used.png */,
 				335AD620266CAF1200E42E76 /* moneyIcon.png */,
 				33658B602668EB980014DD48 /* settings.png */,
 				338E687126651D8A001A2B16 /* coins.jpg */,
@@ -444,6 +444,7 @@
 			files = (
 				338E687226651D8A001A2B16 /* coins.jpg in Resources */,
 				33258373266E700300C32F73 /* Timer.png in Resources */,
+				33767E4A266F16960006CEA7 /* gxmaker_off.png in Resources */,
 				3325836F266E6F2F00C32F73 /* startTimer.png in Resources */,
 				3395A48F2669EE1800095CD2 /* Configuration copy.storekit in Resources */,
 				3363A97C2663C0CB00EEBCED /* LaunchScreen.storyboard in Resources */,
@@ -451,16 +452,15 @@
 				338E686826650810001A2B16 /* reload.png in Resources */,
 				338E685D266461C2001A2B16 /* dokuro.png in Resources */,
 				33658B612668EB980014DD48 /* settings.png in Resources */,
-				3325836D266E656500C32F73 /* gxmaker_off.png in Resources */,
 				3363A9DE2663C11600EEBCED /* KitView.xib in Resources */,
 				335AD621266CAF1200E42E76 /* moneyIcon.png in Resources */,
-				3325836C266E656500C32F73 /* gxmaker_used.png in Resources */,
 				3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */,
 				338E6860266462E9001A2B16 /* heart.png in Resources */,
 				3363A9792663C0CB00EEBCED /* Assets.xcassets in Resources */,
 				338E686226646335001A2B16 /* heartCard.png in Resources */,
 				33258375266E725800C32F73 /* oneStopTimer.png in Resources */,
 				3363A9772663C0CB00EEBCED /* Main.storyboard in Resources */,
+				33767E4B266F16960006CEA7 /* gxmaker_used.png in Resources */,
 				338E686C2665090D001A2B16 /* janken.png in Resources */,
 				33645BE62667B6F90079878B /* TableViewController.xib in Resources */,
 				33258371266E6F4600C32F73 /* stopTimer.png in Resources */,
