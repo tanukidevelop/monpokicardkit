@@ -44,9 +44,11 @@ class KitViewController: UIViewController {
             self?.showAdMob()
             self?.timerStop = false
             self?.ourTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self?.Action), userInfo: nil, repeats: true)
+            self?.kitView?.startTimerButton.isEnabled = false
         }).disposed(by: disposeBag)
         
         kitView.stopTimerButton.rx.tap.subscribe({ [weak self] _ in
+            self?.kitView?.startTimerButton.isEnabled = true
             self?.showAdMob()
             self?.ourTimer.invalidate()
             if (self?.timerStop == true) {
@@ -245,6 +247,7 @@ class KitViewController: UIViewController {
                             alertController.dismiss(animated: true, completion: nil)
                             
                             // ストップウォッチ機能をリセット
+                            self.kitView?.startTimerButton.isEnabled = true
                             self.ourTimer.invalidate()
                             self.timerStop = false
                             self.TimerDisplayed = 0
