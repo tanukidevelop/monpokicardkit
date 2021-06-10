@@ -29,15 +29,6 @@ class TableViewModel {
         var cellStatus: pokimonStatusModel
         cellStatus = self.statusList[(indexPath.section + indexPath.row)]
 
-        // TableViewのセルを再利用される時に以前の値が入らないようにクリアする
-        cell.numberLabel?.text = ""
-        cell.damageLabel?.text = ""
-        cell.poisonLabel.isHidden = true
-        cell.fireLabel.isHidden = true
-        cell.recoveryButton.isHidden = true
-        cell.recoveryImageView.isHidden = true
-        cell.poisonImageView.isHidden = true
-        cell.settingsButton.isHidden = true
         
         // ベンチは毒・やけどは回復する
         if (indexPath.section == 1) {

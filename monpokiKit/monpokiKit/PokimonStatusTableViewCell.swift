@@ -56,4 +56,17 @@ class PokimonStatusTableViewCell: UITableViewCell {
         }
 
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // TableViewのセルを再利用される時に以前の値が入らないようにクリアする
+        self.numberLabel?.text = ""
+        self.damageLabel?.text = ""
+        self.poisonLabel.isHidden = true
+        self.fireLabel.isHidden = true
+        self.recoveryButton.isHidden = true
+        self.recoveryImageView.isHidden = true
+        self.poisonImageView.isHidden = true
+        self.settingsButton.isHidden = true
+    }
 }
