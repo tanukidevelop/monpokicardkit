@@ -105,18 +105,17 @@ class KitViewController: UIViewController {
                 }))
             }
             
+            actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（1P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
+                self?.playerOneTableView.changeActiveMugenzone()
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（2P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
+                self?.playerTwoTableView.changeActiveMugenzone()
+            }))
 
             
             // iPad の場合のみ、ActionSheetを表示するための必要な設定
             if UIDevice.current.userInterfaceIdiom == .pad {
-                actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（1P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
-                    self?.playerOneTableView.changeActiveMugenzone()
-                }))
-                
-                actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（2P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
-                    self?.playerTwoTableView.changeActiveMugenzone()
-                }))
-                
                 actionSheet.popoverPresentationController?.sourceView =  kitView.settingsButton
                 let screenSize = UIScreen.main.bounds
                 actionSheet.popoverPresentationController?.sourceRect =  kitView.settingsButton.frame
@@ -265,10 +264,8 @@ class KitViewController: UIViewController {
                             self.kitView?.timerLabel.text = ""
                             
                             // ムゲンゾーンを元に戻す
-                            if UIDevice.current.userInterfaceIdiom == .pad {
-                                self.playerOneTableView.InActiveMugenzone()
-                                self.playerTwoTableView.InActiveMugenzone()
-                            }
+                            self.playerOneTableView.InActiveMugenzone()
+                            self.playerTwoTableView.InActiveMugenzone()
 
                 })
         let cancelAction:UIAlertAction =

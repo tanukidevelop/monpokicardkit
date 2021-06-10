@@ -242,12 +242,18 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     public func changeActiveMugenzone() {
         isActiveMugenzone = !(isActiveMugenzone)
         self.tableView.reloadData()
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.tableView.isScrollEnabled = isActiveMugenzone
+        }
     }
     
     // ムゲンゾーン⇄通常モンスターを入れ替える
     public func InActiveMugenzone() {
         isActiveMugenzone = false
         self.tableView.reloadData()
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.tableView.isScrollEnabled = false
+        }
     }
 }
 
