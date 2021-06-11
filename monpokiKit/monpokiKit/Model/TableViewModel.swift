@@ -79,6 +79,8 @@ class TableViewModel {
             default:
                 break
             }
+        } else {
+            cell.numberLabel?.text = "　"
         }
 
     }
