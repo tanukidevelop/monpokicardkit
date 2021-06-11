@@ -35,6 +35,7 @@
 		33658B77266904E00014DD48 /* AppStoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658B76266904E00014DD48 /* AppStoreClass.swift */; };
 		33767E4A266F16960006CEA7 /* gxmaker_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 33767E48266F16960006CEA7 /* gxmaker_off.png */; };
 		33767E4B266F16960006CEA7 /* gxmaker_used.png in Resources */ = {isa = PBXBuildFile; fileRef = 33767E49266F16960006CEA7 /* gxmaker_used.png */; };
+		337DEA702673438900F86C99 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337DEA6F2673438900F86C99 /* DataManager.swift */; };
 		338E685D266461C2001A2B16 /* dokuro.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685C266461C2001A2B16 /* dokuro.png */; };
 		338E6860266462E9001A2B16 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E685F266462E9001A2B16 /* heart.png */; };
 		338E686226646335001A2B16 /* heartCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 338E686126646335001A2B16 /* heartCard.png */; };
@@ -100,6 +101,7 @@
 		33658B76266904E00014DD48 /* AppStoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreClass.swift; sourceTree = "<group>"; };
 		33767E48266F16960006CEA7 /* gxmaker_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gxmaker_off.png; sourceTree = "<group>"; };
 		33767E49266F16960006CEA7 /* gxmaker_used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gxmaker_used.png; sourceTree = "<group>"; };
+		337DEA6F2673438900F86C99 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		338E685C266461C2001A2B16 /* dokuro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dokuro.png; sourceTree = "<group>"; };
 		338E685F266462E9001A2B16 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		338E686126646335001A2B16 /* heartCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartCard.png; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		3363A96E2663C0CB00EEBCED /* monpokiKit */ = {
 			isa = PBXGroup;
 			children = (
+				337DEA6F2673438900F86C99 /* DataManager.swift */,
 				33B521A2266DA30C001DA206 /* StructConstants.swift */,
 				3363A96F2663C0CB00EEBCED /* AppDelegate.swift */,
 				3363A9712663C0CB00EEBCED /* SceneDelegate.swift */,
@@ -575,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3363A9DD2663C11600EEBCED /* KitViewController.swift in Sources */,
+				337DEA702673438900F86C99 /* DataManager.swift in Sources */,
 				33645BDE2667A8970079878B /* TableViewModel.swift in Sources */,
 				335AD623266CD53F00E42E76 /* UpgradeNotice.swift in Sources */,
 				3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */,

@@ -20,8 +20,6 @@ class KitViewController: UIViewController {
     
     var addTimer = Timer()
     let disposeBag = DisposeBag()
-    let nogxmaker = UIImage(named:"gxmaker_off")
-    let gxmakerused = UIImage(named:"gxmaker_used")
 
     
     var kitView : KitView?
@@ -64,31 +62,36 @@ class KitViewController: UIViewController {
         }).disposed(by: disposeBag)
         
         
-        kitView.GxMakerPlayerOne.image = nogxmaker
-        kitView.GxMakerPlayerOneButton.rx.tap.subscribe({ [weak self] _ in
+        kitView.playerOneUsedButton.rx.tap.subscribe({ [weak self] _ in
             self?.showAdMob()
-            if (kitView.GxMakerPlayerOne.image == self?.nogxmaker) {
-                kitView.GxMakerPlayerOne.image = self?.gxmakerused
-            } else {
-                kitView.GxMakerPlayerOne.image = self?.nogxmaker
-            }
+            self?.showUsedActionSheet(is1p: true)
+            
         }).disposed(by: disposeBag)
         
-        kitView.GxMakerPlayerTwo.image = nogxmaker
-        kitView.GxMakerPlayerTwoButton.rx.tap.subscribe({ [weak self] _ in
+        kitView.playerTwoUsedButton.rx.tap.subscribe({ [weak self] _ in
             self?.showAdMob()
-            if (kitView.GxMakerPlayerTwo.image == self?.nogxmaker) {
-                kitView.GxMakerPlayerTwo.image = self?.gxmakerused
-            } else {
-                kitView.GxMakerPlayerTwo.image = self?.nogxmaker
-            }
-
+            self?.showUsedActionSheet(is1p: false)
         }).disposed(by: disposeBag)
         
         kitView.settingsButton.rx.tap.subscribe({ [weak self] _ in
             let actionSheet = UIAlertController(title: "設定",
                                                 message: nil,
                                                 preferredStyle: .actionSheet)
+
+            
+            actionSheet.addAction(UIAlertAction(title: "ダメージ入力 タイプ変更", style: .default, handler: {[unowned self] (action:UIAlertAction) in
+                self?.playerOneTableView.isDamagePicker = !(self?.playerOneTableView.isDamagePicker)!
+                self?.playerTwoTableView.isDamagePicker = !(self?.playerTwoTableView.isDamagePicker)!
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（1P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
+                self?.playerOneTableView.changeActiveMugenzone()
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（2P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
+                self?.playerTwoTableView.changeActiveMugenzone()
+            }))
+
             actionSheet.addAction(UIAlertAction(title: "広告非表示機能を復元", style: .default, handler: { (action:UIAlertAction) in
                 AppStoreClass.shared.restore { isSuccess in
                     if (isSuccess) {
@@ -104,20 +107,6 @@ class KitViewController: UIViewController {
                     AppStoreClass.shared.purchaseItemFromAppStore(productId: StructConstaints.PRODUCT_ID)
                 }))
             }
-            
-            actionSheet.addAction(UIAlertAction(title: "ダメージ入力 タイプ変更", style: .default, handler: {[unowned self] (action:UIAlertAction) in
-                self?.playerOneTableView.isDamagePicker = !(self?.playerOneTableView.isDamagePicker)!
-                self?.playerTwoTableView.isDamagePicker = !(self?.playerTwoTableView.isDamagePicker)!
-            }))
-            
-            actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（1P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
-                self?.playerOneTableView.changeActiveMugenzone()
-            }))
-            
-            actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（2P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
-                self?.playerTwoTableView.changeActiveMugenzone()
-            }))
-
             
             // iPad の場合のみ、ActionSheetを表示するための必要な設定
             if UIDevice.current.userInterfaceIdiom == .pad {
@@ -253,8 +242,6 @@ class KitViewController: UIViewController {
                           handler:{
                             (action:UIAlertAction!) -> Void in
                             // 処理
-                            self.kitView?.GxMakerPlayerOne.image = self.nogxmaker
-                            self.kitView?.GxMakerPlayerTwo.image = self.nogxmaker
                             self.playerOneTableView.tableViewModel.resetGame()
                             self.playerTwoTableView.tableViewModel.resetGame()
                             self.playerOneTableView.tableView.reloadData()
@@ -271,6 +258,9 @@ class KitViewController: UIViewController {
                             // ムゲンゾーンを元に戻す
                             self.playerOneTableView.InActiveMugenzone()
                             self.playerTwoTableView.InActiveMugenzone()
+                            
+                            // 使用技をリセットする
+                            DataManager.shared.resetUsed()
 
                 })
         let cancelAction:UIAlertAction =
@@ -285,5 +275,60 @@ class KitViewController: UIViewController {
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
 
+    }
+    
+    func showUsedActionSheet(is1p: Bool) {
+        let dataManager = DataManager.shared
+        let actionSheet = UIAlertController(title: "使用済みカード",
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        var usedSuppliqueGx = (is1p) ? dataManager.used1pSuppliqueGx : dataManager.used2pSuppliqueGx
+        var usedMeutwoVunion = (is1p) ? dataManager.used1pMeutwoVunion : dataManager.used2pMeutwoVunion
+        var usedZacianVunion = (is1p) ? dataManager.used1pZacianVunion : dataManager.used2pZacianVunion
+        var usedGekkougaVunion = (is1p) ? dataManager.used1pGekkougaVunion : dataManager.used2pGekkougaVunion
+
+        let usedSuppliqueGxText = (usedSuppliqueGx == false) ? "使用可能：GX技" : "使用済み：GX技"
+        let usedMeutwoVunionText = (usedMeutwoVunion == false) ? "使用可能：ミュウツーV-union" : "使用済み：ミュウツーV-union"
+        let usedZacianVunionText = (usedZacianVunion == false) ? "使用可能：ザシアンV-union" : "使用済み：ザシアンV-union"
+        let usedGekkougaVunionText = (usedGekkougaVunion == false) ? "使用可能：ゲッコウガV-union" : "使用済み：ゲッコウガV-union"
+
+        actionSheet.addAction(UIAlertAction(title: usedSuppliqueGxText, style: (usedSuppliqueGx) ? .destructive : .default , handler: {[unowned self] (action:UIAlertAction) in
+            if (is1p) {
+                dataManager.used1pSuppliqueGx = !(dataManager.used1pSuppliqueGx)
+            } else {
+                dataManager.used2pSuppliqueGx = !(dataManager.used2pSuppliqueGx)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: usedMeutwoVunionText, style:   (usedMeutwoVunion) ? .destructive : .default, handler: {[unowned self] (action:UIAlertAction) in
+            if (is1p) {
+                dataManager.used1pMeutwoVunion = !(dataManager.used1pMeutwoVunion)
+            } else {
+                dataManager.used2pMeutwoVunion = !(dataManager.used2pMeutwoVunion)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: usedZacianVunionText, style: (usedZacianVunion) ? .destructive : .default, handler: {[unowned self] (action:UIAlertAction) in
+            if (is1p) {
+                dataManager.used1pZacianVunion = !(dataManager.used1pZacianVunion)
+            } else {
+                dataManager.used2pZacianVunion = !(dataManager.used2pZacianVunion)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: usedGekkougaVunionText, style:  (usedGekkougaVunion) ? .destructive : .default, handler: {[unowned self] (action:UIAlertAction) in
+            if (is1p) {
+                dataManager.used1pGekkougaVunion = !(dataManager.used1pGekkougaVunion)
+            } else {
+                dataManager.used2pGekkougaVunion = !(dataManager.used2pGekkougaVunion)
+            }
+        }))
+        // iPad の場合のみ、ActionSheetを表示するための必要な設定
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            actionSheet.popoverPresentationController?.sourceView =  (is1p) ? kitView!.playerOneView : kitView!.playerTwoUsedButton
+            let screenSize = UIScreen.main.bounds
+            actionSheet.popoverPresentationController?.sourceRect =  kitView!.settingsButton.frame
+        }
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.destructive, handler: { (action:UIAlertAction) in
+        }))
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
 }

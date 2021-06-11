@@ -17,10 +17,8 @@ class KitView: UIView {
     @IBOutlet weak var cointossButton: UIButton!
     @IBOutlet weak var jankenButton: UIButton!
     
-    @IBOutlet weak var GxMakerPlayerOne: UIImageView!
-    @IBOutlet weak var GxMakerPlayerOneButton: UIButton!
-    @IBOutlet weak var GxMakerPlayerTwo: UIImageView!
-    @IBOutlet weak var GxMakerPlayerTwoButton: UIButton!
+    @IBOutlet weak var playerOneUsedButton: UIButton!
+    @IBOutlet weak var playerTwoUsedButton: UIButton!
     
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var stopTimerButton: UIButton!
