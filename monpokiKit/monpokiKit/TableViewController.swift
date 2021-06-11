@@ -10,11 +10,18 @@ import RxCocoa
 import RxSwift
 
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
     let disposeBag = DisposeBag()
     var tableViewModel = TableViewModel()
+    var isDamagePicker = true
     public var isActiveMugenzone = false // ムゲンゾーン表示（デフォルトはOFF）
-
+    var damageList = [0,10,20,30,40,50,60,70,80,90,100,
+                      110,120,130,140,150,160,170,180,190,200,
+                      210,220,230,240,250,260,270,280,290,300,
+                      310,320,330,340,350,360,370,380,390,400,
+                      410,420,430,440,450,460,470,480,490,500]
+    var selectDamage = 0
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -232,10 +239,72 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedStatus: pokimonStatusModel
-        selectedStatus = tableViewModel.statusList[(indexPath.section + indexPath.row)]
-        selectedStatus.damage += 10
-        tableView.reloadData()
+        if (isDamagePicker) {
+            showDamagePickerView(selectIndexPath: indexPath)
+        } else {
+            var selectedStatus: pokimonStatusModel
+            selectedStatus = tableViewModel.statusList[(indexPath.section + indexPath.row)]
+            selectedStatus.damage += 10
+            tableView.reloadData()
+        }
+        return
+
+    }
+    
+    func showDamagePickerView(selectIndexPath: IndexPath)  {
+        let alertView = UIAlertController(
+            title: "ダメージを選択してください",
+            message: "\n\n\n\n\n\n\n\n\n",
+            preferredStyle: .alert)
+
+        let pickerView = UIPickerView(frame:
+            CGRect(x: 0, y: 50, width: 270, height: 162))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+
+        // comment this line to use white color
+        pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+
+        alertView.view.addSubview(pickerView)
+
+        let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
+            var selectedStatus: pokimonStatusModel
+            selectedStatus = self.tableViewModel.statusList[(selectIndexPath.section + selectIndexPath.row)]
+            selectedStatus.damage += self.selectDamage
+            self.tableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
+
+
+        alertView.addAction(action)
+        alertView.addAction(cancelAction)
+
+        present(alertView, animated: true, completion: {
+            pickerView.frame.size.width = alertView.view.frame.size.width
+        })
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return damageList.count
+    }
+    // UIPickerViewに表示する配列
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        
+        return String(damageList[row])
+    }
+    
+    // UIPickerViewのRowが選択された時の挙動
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
+        print(damageList[row])
+        selectDamage = damageList[row]
     }
     
     // ムゲンゾーン⇄通常モンスターを入れ替える

@@ -105,6 +105,11 @@ class KitViewController: UIViewController {
                 }))
             }
             
+            actionSheet.addAction(UIAlertAction(title: "ダメージ入力 タイプ変更", style: .default, handler: {[unowned self] (action:UIAlertAction) in
+                self?.playerOneTableView.isDamagePicker = !(self?.playerOneTableView.isDamagePicker)!
+                self?.playerTwoTableView.isDamagePicker = !(self?.playerTwoTableView.isDamagePicker)!
+            }))
+            
             actionSheet.addAction(UIAlertAction(title: "ムゲンゾーン切り替え（1P）", style: .default, handler: {[unowned self] (action:UIAlertAction) in
                 self?.playerOneTableView.changeActiveMugenzone()
             }))
