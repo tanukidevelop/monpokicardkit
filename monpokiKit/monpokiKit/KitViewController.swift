@@ -167,7 +167,7 @@ class KitViewController: UIViewController {
         let request = GADRequest()
         
         // myAdmobID:ca-app-pub-7248782092625183/3345264085
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/3345264085",
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7248782092625183/8171763512",
                                request: request,
                                completionHandler: { [self] ad, error in
                                 if let error = error {
