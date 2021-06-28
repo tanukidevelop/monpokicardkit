@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="403" height="80"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3T9-b9-j2C">
-                                <rect key="frame" x="0.0" y="0.0" width="203" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="263" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-rN-iuG">
                                         <rect key="frame" x="2" y="0.0" width="24.5" height="80"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edz-5z-QQi">
-                                <rect key="frame" x="203" y="0.0" width="200" height="80"/>
+                                <rect key="frame" x="263" y="0.0" width="140" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BAa-Md-j0f">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
@@ -129,32 +129,6 @@
                                             <constraint firstItem="Ku5-xy-izi" firstAttribute="centerY" secondItem="JJx-Tu-B4N" secondAttribute="centerY" id="zGC-y3-Psk"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJJ-tu-bYd">
-                                        <rect key="frame" x="140" y="0.0" width="60" height="80"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dokuro.png" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-jK-azm" userLabel="dokuroIcon.png">
-                                                <rect key="frame" x="5" y="5" width="50" height="70"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-GL-jOh">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="pJt-GL-jOh" secondAttribute="bottom" id="0ZV-zO-t87"/>
-                                            <constraint firstItem="pJt-GL-jOh" firstAttribute="top" secondItem="JJJ-tu-bYd" secondAttribute="top" id="4s6-6f-4pT"/>
-                                            <constraint firstAttribute="bottom" secondItem="LJ1-jK-azm" secondAttribute="bottom" constant="5" id="EvF-pg-9Fa"/>
-                                            <constraint firstAttribute="trailing" secondItem="pJt-GL-jOh" secondAttribute="trailing" id="G8g-y6-ct4"/>
-                                            <constraint firstItem="pJt-GL-jOh" firstAttribute="centerY" secondItem="JJJ-tu-bYd" secondAttribute="centerY" id="GbS-xv-lwL"/>
-                                            <constraint firstAttribute="trailing" secondItem="LJ1-jK-azm" secondAttribute="trailing" constant="5" id="LJ4-bT-Nwc"/>
-                                            <constraint firstItem="LJ1-jK-azm" firstAttribute="top" secondItem="JJJ-tu-bYd" secondAttribute="top" constant="5" id="Lrq-M2-iZ8"/>
-                                            <constraint firstAttribute="width" constant="60" id="bjx-kG-MIa"/>
-                                            <constraint firstItem="pJt-GL-jOh" firstAttribute="centerX" secondItem="JJJ-tu-bYd" secondAttribute="centerX" id="kwC-A3-5hB"/>
-                                            <constraint firstItem="LJ1-jK-azm" firstAttribute="leading" secondItem="JJJ-tu-bYd" secondAttribute="leading" constant="5" id="lVs-VK-Lyw"/>
-                                            <constraint firstItem="pJt-GL-jOh" firstAttribute="leading" secondItem="JJJ-tu-bYd" secondAttribute="leading" id="sSo-v4-wqC"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -174,17 +148,14 @@
                 <outlet property="fireLabel" destination="Zwi-ur-2zw" id="eyG-Z7-Dhu"/>
                 <outlet property="master" destination="Zbh-yr-9Cx" id="zFM-NL-rzG"/>
                 <outlet property="numberLabel" destination="hnW-rN-iuG" id="AxF-se-acq"/>
-                <outlet property="poisonImageView" destination="LJ1-jK-azm" id="8Bj-zK-Td8"/>
                 <outlet property="poisonLabel" destination="1yc-N6-ESQ" id="hbm-M6-WnQ"/>
                 <outlet property="recoveryButton" destination="Ku5-xy-izi" id="7XS-nd-0fc"/>
                 <outlet property="recoveryImageView" destination="8V0-rn-cfj" id="Yfa-tg-4kA"/>
-                <outlet property="settingsButton" destination="pJt-GL-jOh" id="BZE-uU-Qlg"/>
             </connections>
             <point key="canvasLocation" x="142.75362318840581" y="100.44642857142857"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="dokuro.png" width="256" height="256"/>
         <image name="heartCard.png" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

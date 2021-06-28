@@ -19,8 +19,6 @@ class PokimonStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var fireLabel: UILabel!
     @IBOutlet weak var recoveryImageView: UIImageView!
     @IBOutlet weak var recoveryButton: UIButton!
-    @IBOutlet weak var poisonImageView: UIImageView!
-    @IBOutlet weak var settingsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,9 +48,7 @@ class PokimonStatusTableViewCell: UITableViewCell {
             self.poisonLabel.isHidden = true
             self.fireLabel.isHidden = true
             self.recoveryButton.isHidden = true
-            self.settingsButton.isHidden = true
             self.recoveryImageView.isHidden = true
-            self.poisonImageView.isHidden = true
         }
 
     }
@@ -66,7 +62,5 @@ class PokimonStatusTableViewCell: UITableViewCell {
         self.fireLabel.isHidden = true
         self.recoveryButton.isHidden = true
         self.recoveryImageView.isHidden = true
-        self.poisonImageView.isHidden = true
-        self.settingsButton.isHidden = true
     }
 }

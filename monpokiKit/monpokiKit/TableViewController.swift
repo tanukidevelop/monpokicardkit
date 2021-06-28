@@ -109,6 +109,30 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }))
         }
         
+        if (indexPath.section == 0) {
+            let showPoisonString = (showPopoverCell.status?.poison == true) ? "「どく」解除" : "「どく」状態にする"
+            let showFireString = (showPopoverCell.status?.fire == true) ? "「やけど」解除" : "「やけど」状態にする"
+            actionSheet.addAction(UIAlertAction(title: showPoisonString, style: .default, handler: { (action:UIAlertAction) in
+                if (showPopoverCell.status?.poison == true) {
+                    showPopoverCell.poisonLabel.isHidden = true
+                    showPopoverCell.status?.poison = false
+                } else {
+                    showPopoverCell.poisonLabel.isHidden = false
+                    showPopoverCell.status?.poison = true
+                }
+            }))
+            actionSheet.addAction(UIAlertAction(title: showFireString, style: .default, handler: { (action:UIAlertAction) in
+
+                if (showPopoverCell.status?.fire == true) {
+                    showPopoverCell.fireLabel.isHidden = true
+                    showPopoverCell.status?.fire = false
+                } else {
+                    showPopoverCell.fireLabel.isHidden = false
+                    showPopoverCell.status?.fire = true
+                }
+            }))
+        }
+        
         actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
             var selectStatus = self.tableViewModel.statusList[(indexPath.section + indexPath.row)]
             self.tableViewModel.resetStatus(statsuModel: selectStatus)
@@ -127,61 +151,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func showActionSheet(cell: PokimonStatusTableViewCell,isBattle: Bool, tableView: UITableView,indexPath:IndexPath) {
-        cell.settingsButton.rx.tap.subscribe({ [weak self] _ in
-            // ボタンタップでキックしたいアクションを記述
-            let actionSheet = UIAlertController(title: "設定",
-                                                message: nil,
-                                                preferredStyle: .actionSheet)
-            
-            if (isBattle) {
-                let showPoisonString = (cell.status?.poison == true) ? "「どく」解除" : "「どく」状態にする"
-                let showFireString = (cell.status?.fire == true) ? "「やけど」解除" : "「やけど」状態にする"
-                
-                actionSheet.addAction(UIAlertAction(title: showPoisonString, style: .default, handler: { (action:UIAlertAction) in
-                    if (cell.status?.poison == true) {
-                        cell.poisonLabel.isHidden = true
-                        cell.status?.poison = false
-                    } else {
-                        cell.poisonLabel.isHidden = false
-                        cell.status?.poison = true
-                    }
-                }))
-                actionSheet.addAction(UIAlertAction(title: showFireString, style: .default, handler: { (action:UIAlertAction) in
-                    if (cell.status?.fire == true) {
-                        cell.fireLabel.isHidden = true
-                        cell.status?.fire = false
-                    } else {
-                        cell.fireLabel.isHidden = false
-                        cell.status?.fire = true
-                    }
-                }))
-            }
-            
-            actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
-                var selectedStatus = self?.tableViewModel.statusList[(indexPath.section + indexPath.row)]
-                self?.tableViewModel.resetStatus(statsuModel: selectedStatus!)
-                tableView.reloadData()
-            }))
-            actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .destructive, handler: { (action:UIAlertAction) in
-            }))
-            // iPad の場合のみ、ActionSheetを表示するための必要な設定
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                actionSheet.popoverPresentationController?.sourceView = cell
-                let screenSize = UIScreen.main.bounds
-                actionSheet.popoverPresentationController?.sourceRect = cell.frame
-            }
-            
-            self?.present(actionSheet, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? PokimonStatusTableViewCell {
             
             cell.status = tableViewModel.statusList[(indexPath.section + indexPath.row)]
             tableViewModel.loadCell(cell: cell, indexPath: indexPath, isOnePlayer: true)
-            showActionSheet(cell: cell,isBattle: (indexPath.section == 0 && indexPath.row == 0),tableView: tableView,indexPath: indexPath)
             return cell
         }
         return UITableViewCell()

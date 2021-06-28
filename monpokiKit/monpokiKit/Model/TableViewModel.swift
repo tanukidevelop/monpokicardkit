@@ -36,8 +36,6 @@ class TableViewModel {
             cellStatus.fire = false
         }
         
-        cell.settingsButton.isHidden = false
-        cell.poisonImageView.isHidden = false
         cell.poisonLabel.isHidden = (cell.status?.poison == false)
         cell.fireLabel.isHidden = (cell.status?.fire == false)
         
@@ -51,11 +49,6 @@ class TableViewModel {
             cell.recoveryButton.isHidden = true
             cell.recoveryImageView.isHidden = true
             
-            // ベンチポケモンはダメージ0の場合は特殊状態アイコンを設定しない。
-            if (indexPath.section == 1) {
-                cell.settingsButton.isHidden = true
-                cell.poisonImageView.isHidden = true
-            }
         }
         
         if (indexPath.section == 1) {
