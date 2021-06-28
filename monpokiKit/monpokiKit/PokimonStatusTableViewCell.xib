@@ -29,8 +29,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110形" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-2s-8q5" userLabel="DamageLabel">
-                                        <rect key="frame" x="26.5" y="0.0" width="127" height="80"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-2s-8q5" userLabel="DamageLabel">
+                                        <rect key="frame" x="26.5" y="0.0" width="79" height="80"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                         </accessibility>
@@ -89,14 +89,32 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2G-1s-vZ9">
+                                                <rect key="frame" x="0.0" y="59" width="70" height="3"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="lQ2-WD-wjp"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDZ-L7-EFj">
+                                                <rect key="frame" x="0.0" y="62" width="70" height="18"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNB-aD-9Yn">
-                                                <rect key="frame" x="0.0" y="59" width="70" height="21"/>
+                                                <rect key="frame" x="0.0" y="80" width="70" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Zwi-ur-2zw" firstAttribute="height" secondItem="1yc-N6-ESQ" secondAttribute="height" multiplier="0.90566" id="6Be-tb-yjQ"/>
                                             <constraint firstItem="1yc-N6-ESQ" firstAttribute="height" secondItem="BAa-Md-j0f" secondAttribute="height" multiplier="1/3" id="pr7-f9-XPo"/>
+                                            <constraint firstItem="NDZ-L7-EFj" firstAttribute="height" secondItem="1yc-N6-ESQ" secondAttribute="height" multiplier="0.679245" id="sfe-0s-267"/>
                                             <constraint firstAttribute="width" constant="70" id="z7T-Xh-mno"/>
                                         </constraints>
                                     </stackView>
@@ -151,6 +169,7 @@
                 <outlet property="poisonLabel" destination="1yc-N6-ESQ" id="hbm-M6-WnQ"/>
                 <outlet property="recoveryButton" destination="Ku5-xy-izi" id="7XS-nd-0fc"/>
                 <outlet property="recoveryImageView" destination="8V0-rn-cfj" id="Yfa-tg-4kA"/>
+                <outlet property="usedMaker" destination="NDZ-L7-EFj" id="WfZ-6G-hUt"/>
             </connections>
             <point key="canvasLocation" x="142.75362318840581" y="100.44642857142857"/>
         </tableViewCell>

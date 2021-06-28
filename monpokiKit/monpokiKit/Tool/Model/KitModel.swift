@@ -11,12 +11,15 @@ class pokimonStatusModel {
     var damage: Int = 0
     var poison: Bool = false
     var fire: Bool = false
+    var used: Bool = false
+
     
     func copy() -> pokimonStatusModel {
         let copyStatusModel = pokimonStatusModel()
         copyStatusModel.damage = self.damage
         copyStatusModel.poison = self.poison
         copyStatusModel.fire = self.fire
+        copyStatusModel.used = self.used
         return copyStatusModel
     }
 }
@@ -46,6 +49,7 @@ class KitModel {
         statsuModel.damage = 0
         statsuModel.poison = false
         statsuModel.fire = false
+        statsuModel.used = false
     }
     
     func resetGame() {

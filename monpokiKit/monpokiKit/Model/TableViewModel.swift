@@ -36,6 +36,8 @@ class TableViewModel {
             cellStatus.fire = false
         }
         
+        cell.usedMaker.isHidden = !(cell.status!.used)
+        
         cell.poisonLabel.isHidden = (cell.status?.poison == false)
         cell.fireLabel.isHidden = (cell.status?.fire == false)
         
@@ -48,7 +50,6 @@ class TableViewModel {
             cell.damageLabel.isHidden = true
             cell.recoveryButton.isHidden = true
             cell.recoveryImageView.isHidden = true
-            
         }
         
         if (indexPath.section == 1) {

@@ -133,11 +133,20 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }))
         }
         
+        actionSheet.addAction(UIAlertAction(title: "USED:切り替え", style: .default, handler: { (action:UIAlertAction) in
+            var selectStatus = self.tableViewModel.statusList[(indexPath.section + indexPath.row)]
+
+            selectStatus.used = !(selectStatus.used)
+            self.tableView.reloadData()
+        }))
+        
         actionSheet.addAction(UIAlertAction(title: "きぜつ（削除）", style: .default, handler: { (action:UIAlertAction) in
             var selectStatus = self.tableViewModel.statusList[(indexPath.section + indexPath.row)]
             self.tableViewModel.resetStatus(statsuModel: selectStatus)
             self.tableView.reloadData()
         }))
+        
+
         
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .destructive, handler: { (action:UIAlertAction) in
         }))

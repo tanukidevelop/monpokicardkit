@@ -20,6 +20,8 @@ class PokimonStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var recoveryImageView: UIImageView!
     @IBOutlet weak var recoveryButton: UIButton!
     
+    @IBOutlet weak var usedMaker: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
