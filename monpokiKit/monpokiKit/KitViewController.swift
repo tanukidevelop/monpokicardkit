@@ -292,6 +292,16 @@ class KitViewController: UIViewController {
         let usedZacianVunionText = (usedZacianVunion == false) ? "使用可能：ザシアンV-union" : "使用済み：ザシアンV-union"
         let usedGekkougaVunionText = (usedGekkougaVunion == false) ? "使用可能：ゲッコウガV-union" : "使用済み：ゲッコウガV-union"
 
+        actionSheet.addAction(UIAlertAction(title: "ポケモンのUSEDを全解除", style:  (usedGekkougaVunion) ? .destructive : .default, handler: {[unowned self] (action:UIAlertAction) in
+            if (is1p) {
+                self.playerOneTableView.tableViewModel.allRemoveUsed()
+                self.playerOneTableView.tableView.reloadData()
+            } else {
+                self.playerTwoTableView.tableViewModel.allRemoveUsed()
+                self.playerTwoTableView.tableView.reloadData()
+            }
+        }))
+        
         actionSheet.addAction(UIAlertAction(title: usedSuppliqueGxText, style: (usedSuppliqueGx) ? .destructive : .default , handler: {[unowned self] (action:UIAlertAction) in
             if (is1p) {
                 dataManager.used1pSuppliqueGx = !(dataManager.used1pSuppliqueGx)

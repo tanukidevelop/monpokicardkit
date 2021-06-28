@@ -97,6 +97,14 @@ class TableViewModel {
             pokimonStatusModel(),
             pokimonStatusModel()]
     }
+    
+    func allRemoveUsed(){
+        self.statusList.forEach{
+            //$0が要素
+            let statusModel: pokimonStatusModel = $0
+            statusModel.used = false
+        }
+    }
    
 }
 
