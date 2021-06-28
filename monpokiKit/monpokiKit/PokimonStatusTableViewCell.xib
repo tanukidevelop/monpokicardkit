@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="403" height="80"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3T9-b9-j2C">
-                                <rect key="frame" x="0.0" y="0.0" width="263" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="193" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-rN-iuG">
                                         <rect key="frame" x="2" y="0.0" width="24.5" height="80"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edz-5z-QQi">
-                                <rect key="frame" x="263" y="0.0" width="140" height="80"/>
+                                <rect key="frame" x="193" y="0.0" width="210" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BAa-Md-j0f">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
@@ -147,6 +147,35 @@
                                             <constraint firstItem="Ku5-xy-izi" firstAttribute="centerY" secondItem="JJx-Tu-B4N" secondAttribute="centerY" id="zGC-y3-Psk"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daa-ef-LOj">
+                                        <rect key="frame" x="140" y="0.0" width="70" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="l0M-XF-alM" userLabel="recoveryIcon.png">
+                                                <rect key="frame" x="15" y="15" width="40" height="50"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7W-Zp-7GJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <connections>
+                                                    <action selector="tappedCheckmarkBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ATp-6I-RVd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="l0M-XF-alM" firstAttribute="leading" secondItem="Daa-ef-LOj" secondAttribute="leading" constant="15" id="5l5-mo-s7v"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q7W-Zp-7GJ" secondAttribute="trailing" id="Bl8-Ze-CeB"/>
+                                            <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="centerX" secondItem="Daa-ef-LOj" secondAttribute="centerX" id="D7M-4Z-v1v"/>
+                                            <constraint firstAttribute="width" constant="70" id="Hm2-Tu-Mb1"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q7W-Zp-7GJ" secondAttribute="bottom" id="bBr-UK-xhV"/>
+                                            <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="leading" secondItem="Daa-ef-LOj" secondAttribute="leading" id="bXt-bo-yiw"/>
+                                            <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="centerY" secondItem="Daa-ef-LOj" secondAttribute="centerY" id="bdN-sz-350"/>
+                                            <constraint firstAttribute="bottom" secondItem="l0M-XF-alM" secondAttribute="bottom" constant="15" id="d42-KH-3qq"/>
+                                            <constraint firstItem="l0M-XF-alM" firstAttribute="top" secondItem="Daa-ef-LOj" secondAttribute="top" constant="15" id="gnA-IE-0W1"/>
+                                            <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="top" secondItem="Daa-ef-LOj" secondAttribute="top" id="vUT-do-YVy"/>
+                                            <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="centerY" secondItem="Daa-ef-LOj" secondAttribute="centerY" id="yll-mf-lx3"/>
+                                            <constraint firstAttribute="trailing" secondItem="l0M-XF-alM" secondAttribute="trailing" constant="15" id="zbI-wC-bgC"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -175,6 +204,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.png" width="256" height="256"/>
         <image name="heartCard.png" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

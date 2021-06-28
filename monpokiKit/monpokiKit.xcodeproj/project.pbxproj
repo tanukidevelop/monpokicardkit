@@ -13,6 +13,7 @@
 		33258371266E6F4600C32F73 /* stopTimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 33258370266E6F4600C32F73 /* stopTimer.png */; };
 		33258373266E700300C32F73 /* Timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 33258372266E700300C32F73 /* Timer.png */; };
 		33258375266E725800C32F73 /* oneStopTimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 33258374266E725800C32F73 /* oneStopTimer.png */; };
+		3353F1E7268A011300C6B930 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3353F1E6268A011300C6B930 /* checkmark.png */; };
 		335AD621266CAF1200E42E76 /* moneyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 335AD620266CAF1200E42E76 /* moneyIcon.png */; };
 		335AD623266CD53F00E42E76 /* UpgradeNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AD622266CD53F00E42E76 /* UpgradeNotice.swift */; };
 		3363A9702663C0CB00EEBCED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363A96F2663C0CB00EEBCED /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		33258370266E6F4600C32F73 /* stopTimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopTimer.png; sourceTree = "<group>"; };
 		33258372266E700300C32F73 /* Timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Timer.png; sourceTree = "<group>"; };
 		33258374266E725800C32F73 /* oneStopTimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oneStopTimer.png; sourceTree = "<group>"; };
+		3353F1E6268A011300C6B930 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		335AD620266CAF1200E42E76 /* moneyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneyIcon.png; sourceTree = "<group>"; };
 		335AD622266CD53F00E42E76 /* UpgradeNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeNotice.swift; sourceTree = "<group>"; };
 		3363A96C2663C0CB00EEBCED /* monpokiKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monpokiKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +308,7 @@
 		338E685E266461C6001A2B16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3353F1E6268A011300C6B930 /* checkmark.png */,
 				33767E48266F16960006CEA7 /* gxmaker_off.png */,
 				33767E49266F16960006CEA7 /* gxmaker_used.png */,
 				3325836E266E6F2F00C32F73 /* startTimer.png */,
@@ -458,6 +461,7 @@
 				3363A9DE2663C11600EEBCED /* KitView.xib in Resources */,
 				335AD621266CAF1200E42E76 /* moneyIcon.png in Resources */,
 				3363A9E92663C50000EEBCED /* PokimonStatusTableViewCell.xib in Resources */,
+				3353F1E7268A011300C6B930 /* checkmark.png in Resources */,
 				338E6860266462E9001A2B16 /* heart.png in Resources */,
 				3363A9792663C0CB00EEBCED /* Assets.xcassets in Resources */,
 				338E686226646335001A2B16 /* heartCard.png in Resources */,

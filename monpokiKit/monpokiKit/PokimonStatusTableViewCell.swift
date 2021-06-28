@@ -52,8 +52,13 @@ class PokimonStatusTableViewCell: UITableViewCell {
             self.recoveryButton.isHidden = true
             self.recoveryImageView.isHidden = true
         }
-
     }
+    
+    @IBAction func tappedCheckmarkBtn(_ sender: Any) {
+        self.status?.used = !(self.status!.used)
+        self.usedMaker.isHidden = !(self.status!.used)
+    }
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
