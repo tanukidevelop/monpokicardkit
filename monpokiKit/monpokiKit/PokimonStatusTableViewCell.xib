@@ -25,17 +25,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="193" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-rN-iuG">
-                                        <rect key="frame" x="2" y="0.0" width="24.5" height="80"/>
+                                        <rect key="frame" x="10" y="0.0" width="24.5" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-2s-8q5" userLabel="DamageLabel">
-                                        <rect key="frame" x="26.5" y="0.0" width="79" height="80"/>
+                                        <rect key="frame" x="44.5" y="0.0" width="79" height="80"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                         </accessibility>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -44,9 +45,9 @@
                                     <constraint firstItem="dgS-2s-8q5" firstAttribute="top" secondItem="3T9-b9-j2C" secondAttribute="top" id="0uJ-Jf-ruA"/>
                                     <constraint firstItem="hnW-rN-iuG" firstAttribute="centerY" secondItem="3T9-b9-j2C" secondAttribute="centerY" id="4ef-l1-O8R"/>
                                     <constraint firstAttribute="bottom" secondItem="dgS-2s-8q5" secondAttribute="bottom" id="IOe-rc-d40"/>
-                                    <constraint firstItem="dgS-2s-8q5" firstAttribute="leading" secondItem="hnW-rN-iuG" secondAttribute="trailing" id="Pwc-w4-2wv"/>
+                                    <constraint firstItem="dgS-2s-8q5" firstAttribute="leading" secondItem="hnW-rN-iuG" secondAttribute="trailing" constant="10" id="Pwc-w4-2wv"/>
                                     <constraint firstAttribute="bottom" secondItem="hnW-rN-iuG" secondAttribute="bottom" id="qrF-3w-1Y9"/>
-                                    <constraint firstItem="hnW-rN-iuG" firstAttribute="leading" secondItem="3T9-b9-j2C" secondAttribute="leading" constant="2" id="uRh-Yo-tLV"/>
+                                    <constraint firstItem="hnW-rN-iuG" firstAttribute="leading" secondItem="3T9-b9-j2C" secondAttribute="leading" constant="10" id="uRh-Yo-tLV"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edz-5z-QQi">
@@ -127,6 +128,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku5-xy-izi">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="tappedRecoveryButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iVT-JR-F8p"/>
                                                 </connections>
