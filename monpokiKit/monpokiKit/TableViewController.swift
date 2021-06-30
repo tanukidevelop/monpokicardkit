@@ -196,6 +196,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    // セクションの背景とテキストの色を変更する
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        // 背景色を変更する
+        view.tintColor = UIColor.rgba(red: 203, green: 86, blue: 70, alpha: 1.0)
+
+        let header = view as! UITableViewHeaderFooterView
+        // テキスト色を変更する
+        header.textLabel?.textColor = .white
+    }
+    
     // セクションの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
