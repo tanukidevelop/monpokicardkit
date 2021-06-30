@@ -150,9 +150,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Daa-ef-LOj">
                                         <rect key="frame" x="140" y="0.0" width="70" height="80"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="l0M-XF-alM" userLabel="recoveryIcon.png">
-                                                <rect key="frame" x="15" y="15" width="40" height="50"/>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7W-Zp-7GJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -160,20 +157,28 @@
                                                     <action selector="tappedCheckmarkBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ATp-6I-RVd"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncu-P6-Sw6">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
+                                                <string key="text">USED
+管理</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="l0M-XF-alM" firstAttribute="leading" secondItem="Daa-ef-LOj" secondAttribute="leading" constant="15" id="5l5-mo-s7v"/>
                                             <constraint firstAttribute="trailing" secondItem="Q7W-Zp-7GJ" secondAttribute="trailing" id="Bl8-Ze-CeB"/>
                                             <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="centerX" secondItem="Daa-ef-LOj" secondAttribute="centerX" id="D7M-4Z-v1v"/>
                                             <constraint firstAttribute="width" constant="70" id="Hm2-Tu-Mb1"/>
+                                            <constraint firstItem="ncu-P6-Sw6" firstAttribute="top" secondItem="Daa-ef-LOj" secondAttribute="top" id="L5Q-9L-xmy"/>
+                                            <constraint firstAttribute="trailing" secondItem="ncu-P6-Sw6" secondAttribute="trailing" id="LOm-40-oF3"/>
+                                            <constraint firstItem="ncu-P6-Sw6" firstAttribute="leading" secondItem="Daa-ef-LOj" secondAttribute="leading" id="OHJ-fF-Otr"/>
+                                            <constraint firstAttribute="bottom" secondItem="ncu-P6-Sw6" secondAttribute="bottom" id="Rnw-1g-nLV"/>
                                             <constraint firstAttribute="bottom" secondItem="Q7W-Zp-7GJ" secondAttribute="bottom" id="bBr-UK-xhV"/>
                                             <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="leading" secondItem="Daa-ef-LOj" secondAttribute="leading" id="bXt-bo-yiw"/>
                                             <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="centerY" secondItem="Daa-ef-LOj" secondAttribute="centerY" id="bdN-sz-350"/>
-                                            <constraint firstAttribute="bottom" secondItem="l0M-XF-alM" secondAttribute="bottom" constant="15" id="d42-KH-3qq"/>
-                                            <constraint firstItem="l0M-XF-alM" firstAttribute="top" secondItem="Daa-ef-LOj" secondAttribute="top" constant="15" id="gnA-IE-0W1"/>
                                             <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="top" secondItem="Daa-ef-LOj" secondAttribute="top" id="vUT-do-YVy"/>
                                             <constraint firstItem="Q7W-Zp-7GJ" firstAttribute="centerY" secondItem="Daa-ef-LOj" secondAttribute="centerY" id="yll-mf-lx3"/>
-                                            <constraint firstAttribute="trailing" secondItem="l0M-XF-alM" secondAttribute="trailing" constant="15" id="zbI-wC-bgC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -204,10 +209,12 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="checkmark.png" width="256" height="256"/>
         <image name="heartCard.png" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
